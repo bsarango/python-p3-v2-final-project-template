@@ -1,6 +1,9 @@
 from models.__init__ import CURSOR, CONN
 
 class Order:
+
+    all = {}
+
     def __init__(self, title, ordering_doctor, time_stamp, completed, employee_id, id=None):
         self.title = title
         self.ordering_doctor = ordering_doctor
