@@ -55,4 +55,25 @@ class Employee:
         else:
             raise ValueError("The department has to be a word(s) and cannot be blank!")
 
+    @classmethod
+    def create_table(cls):
+        sql = """
+            CREATE TABLE IF NOT EXISTS employees (
+                id PRIMARY KEY,
+                first_name TEXT,
+                last_name TEXT,
+                job_title TEXT,
+                department TEXT)
+            """
+            CURSOR.execute(sql)
+            CONN.commit()
+        
+    @classmethod
+    def drop_table(cls):
+        sql = """
+            DROP TABLE IF EXISTS employees;
+            """
+            CURSOR.execute(sql)
+            CONN.commit()
 
+    
