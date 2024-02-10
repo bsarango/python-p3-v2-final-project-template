@@ -34,4 +34,26 @@ class Order:
             raise ValueError("The ordering doctor's name has toe a be proper name and cannot be empty!")
 
     @property
-    
+    def completed(self):
+        return self._completed
+
+    @completed.setter
+    def completed(self,completed):
+        if isinstance(completed, bool):
+            self._completed = completed
+        else:
+            raise ValueError("Order's completed status must be a True or False value!")
+
+    @property
+    def employee_id(self):
+        return self._employee_id
+
+    employee_id.setter
+    def employee_id(self, employee_id):
+        if isinstance(employee_id,int):
+            self._employee_id = employee_id
+        else:
+            raise ValueError(
+                "The employee entered isn't in the database. Please enter another employee to assign this order to."
+            )
+            
