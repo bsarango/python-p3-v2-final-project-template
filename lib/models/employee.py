@@ -2,7 +2,7 @@ from models.__init__ import CURSOR, CONN
 
 class Employee:
 
-    all = {}
+    all = []
 
     def __init__(self, first_name, last_name, job_title, department, id = None):
         self.first_name = first_name
@@ -76,4 +76,13 @@ class Employee:
             CURSOR.execute(sql)
             CONN.commit()
 
-    
+    def save(self):
+        sql = """
+            INSERT INTO employees (first_name, last_name, job_title, deparment)
+            VALUES (?, ?, ?, ?)
+        """
+        CURSOR.execute(sql,(self.first_name, self.last_name, self.job_title, self.deparment))
+        CONN.commit()
+
+        self.id = CURSOR.lastrowid
+        type(self).all.append(self)
