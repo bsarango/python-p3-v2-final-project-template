@@ -78,11 +78,41 @@ class Employee:
 
     def save(self):
         sql = """
-            INSERT INTO employees (first_name, last_name, job_title, deparment)
+            INSERT INTO employees (first_name, last_name, job_title, department)
             VALUES (?, ?, ?, ?)
         """
-        CURSOR.execute(sql,(self.first_name, self.last_name, self.job_title, self.deparment))
+        CURSOR.execute(sql,(self.first_name, self.last_name, self.job_title, self.department))
         CONN.commit()
 
         self.id = CURSOR.lastrowid
         type(self).all.append(self)
+
+    @classmethod
+    def create(cls, first_name, last_name, job_title, department):
+        employee =  cls(first_name, last_name, job_title, department)
+        employee.save()
+        return employee
+
+    def update(self):
+        sql = """
+            UPDATE employees
+            SET first_name = ?, last_name = ?, job_title = ?, department = ?
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql, (self.first_name, self.last_name, self.job_title, self.department, self.id))
+        CONN.commit()
+
+    def delete(self):
+        sql = """
+            DELETE FROM employees
+            WHERE id = ?
+        """
+
+        for employee in Employee.all:
+            if employee.id == self.id:
+                Employee.all.remove(employee)
+
+        self.id = None
+
+    
