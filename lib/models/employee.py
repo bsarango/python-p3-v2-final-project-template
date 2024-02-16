@@ -85,7 +85,7 @@ class Employee:
         CONN.commit()
 
         self.id = CURSOR.lastrowid
-        type(self).all.append(self)
+        type(self).all[self.id] = self
 
     @classmethod
     def create(cls, first_name, last_name, job_title, department):
