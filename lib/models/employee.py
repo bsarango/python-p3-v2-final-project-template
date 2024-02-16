@@ -115,4 +115,12 @@ class Employee:
 
         self.id = None
 
-    
+
+    def get_all(self):
+        sql = """
+            SELECT * from employees
+        """
+
+        rows = CURSOR.execute(sql).fetchall()
+        
+        return [row from row in rows]
