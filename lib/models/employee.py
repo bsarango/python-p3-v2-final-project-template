@@ -2,7 +2,7 @@ from models.__init__ import CURSOR, CONN
 
 class Employee:
 
-    all = []
+    all = {}
 
     def __init__(self, first_name, last_name, job_title, department, id = None):
         self.first_name = first_name
@@ -114,6 +114,23 @@ class Employee:
                 Employee.all.remove(employee)
 
         self.id = None
+
+    @classmethod
+    def instance_from_db(cls,row):
+        employee = cls.all.get(row[0])
+
+        if employee :
+            employee.first_name=row[1]
+            employee.last_name=row[2]
+            employee.job_title=row[3]
+            employee.department=row[4]
+        
+        else:
+            employee = cls(row[1],row[2],row[3],row[4])
+            employee.id = row[0]
+            cls.all[employee.id] = employee
+
+        return employee
 
 
     def get_all(self):
