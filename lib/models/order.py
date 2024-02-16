@@ -4,10 +4,9 @@ class Order:
 
     all = {}
 
-    def __init__(self, title, ordering_doctor, time_stamp, completed = False, employee_id, id=None):
+    def __init__(self, title, ordering_doctor, time_stamp=None, completed = False, employee_id, id=None):
         self.title = title
         self.ordering_doctor = ordering_doctor
-        self.time_stamp = time_stamp
         self.completed = completed
         self.employee_id = employee_id
 
@@ -56,4 +55,3 @@ class Order:
             raise ValueError(
                 "The employee entered isn't in the database. Please enter another employee to assign this order to."
             )
-            
