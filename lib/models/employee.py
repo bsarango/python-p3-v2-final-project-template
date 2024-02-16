@@ -130,12 +130,13 @@ class Employee:
 
         return employee
 
+    @classmethod
+    def get_all(cls):
 
-    def get_all(self):
         sql = """
             SELECT * from employees
         """
 
         rows = CURSOR.execute(sql).fetchall()
         
-        return [row from row in rows]
+        return [cls.instance_from_db(row) for row in rows]
