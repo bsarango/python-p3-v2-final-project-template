@@ -109,9 +109,7 @@ class Employee:
             WHERE id = ?
         """
 
-        for employee in Employee.all:
-            if employee.id == self.id:
-                Employee.all.remove(employee)
+        del type(self).all[self.id]
 
         self.id = None
 
