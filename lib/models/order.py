@@ -82,8 +82,8 @@ class Order:
 
     def save(self):
         sql = """
-            INSERT INTO orders (title, ordering_doctor, time_stamp, completed, employee_id)
-            VALUES (?,?, NOW(), ?)
+            INSERT INTO orders (title, ordering_doctor, completed, employee_id, time_stamp)
+            VALUES (?, ?, ?, ?, NOW())
         """
 
         CURSOR.execute(sql, (self.title, self.ordering_doctor, self.completed, self.employee_id))
@@ -106,5 +106,7 @@ class Order:
         self.time_stamp = row[3]
 
     @classmethod
-    def create(cls, title, ordering_doctor, time_stamp, employee_id):
-        cls(title,ordering_doctor,time_stamp,employee_id)
+    def create(cls, title, ordering_doctor, completed, employee_id):
+        order = cls(title,ordering_doctor,time_stamp,employee_id)
+        order.save()
+        return order
