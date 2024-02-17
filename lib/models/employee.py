@@ -136,7 +136,7 @@ class Employee:
     def get_all(cls):
 
         sql = """
-            SELECT * from employees
+            SELECT * FROM employees
         """
 
         rows = CURSOR.execute(sql).fetchall()
