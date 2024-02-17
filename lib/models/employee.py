@@ -109,6 +109,8 @@ class Employee:
             WHERE id = ?
         """
 
+        CURSOR.execute(sql,(self.id,))
+
         del type(self).all[self.id]
 
         self.id = None

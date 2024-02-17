@@ -107,6 +107,29 @@ class Order:
 
     @classmethod
     def create(cls, title, ordering_doctor, completed, employee_id):
-        order = cls(title,ordering_doctor,time_stamp,employee_id)
+        order = cls(title,ordering_doctor, completed ,employee_id)
         order.save()
         return order
+
+    def update(self):
+        sql = """
+            UPDATE orders
+            SET title = ?, ordering_doctor=?, completed=?, employee_id=?
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql,(self.title, self.ordering_doctor,self.completed, self.employee_id, self.id))
+        CONN.commit()
+    
+    def delete(self):
+        sql = """
+            DELETE orders
+            WHERE id = ?
+        """
+
+        CURSOR.execute(sql,(self.id,))
+        CONN.execute()
+
+        del type(self).all[self.id]
+
+        self.id = None
