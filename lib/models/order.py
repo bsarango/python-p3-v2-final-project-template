@@ -4,7 +4,7 @@ class Order:
 
     all = {}
 
-    def __init__(self, title, ordering_doctor, time_stamp=None, completed = False, employee_id, id=None):
+    def __init__(self, title, ordering_doctor, completed = False, employee_id, time_stamp=None, id=None):
         self.title = title
         self.ordering_doctor = ordering_doctor
         self.completed = completed
@@ -63,9 +63,9 @@ class Order:
                 id INTEGER PRIMARY KEY
                 title TEXT
                 ordering_doctor TEXT
-                time_stamp DATETIME
                 completed BIT
                 employee_id INTEGER
+                time_stamp DATETIME
             )
         """
         CURSOR.execute(sql)
@@ -104,3 +104,7 @@ class Order:
 
         row = CURSOR.execute(sql,(id,)).fetchone()
         self.time_stamp = row[3]
+
+    @classmethod
+    def create(cls, title, ordering_doctor, time_stamp, employee_id):
+        cls(title,ordering_doctor,time_stamp,employee_id)
