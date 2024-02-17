@@ -79,3 +79,28 @@ class Order:
         """
         CURSOR.execute(sql)
         CONN.commit()
+
+    def save(self):
+        sql = """
+            INSERT INTO orders (title, ordering_doctor, time_stamp, completed, employee_id)
+            VALUES (?,?, NOW(), ?)
+        """
+
+        CURSOR.execute(sql, (self.title, self.ordering_doctor, self.completed, self.employee_id))
+        CONN.commit()
+
+        self.id = CURSOR.lastrowid
+
+        self.save_time_stamp(self.id)
+
+        type(self).all[self.id] = self
+
+    
+    def save_time_stamp(self,id)
+        sql = """
+            SELECT * FROM orders
+            WHERE id = ?
+        """
+
+        row = CURSOR.execute(sql,(id,)).fetchone()
+        self.time_stamp = row[3]
