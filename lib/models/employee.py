@@ -59,7 +59,7 @@ class Employee:
     def create_table(cls):
         sql = """
             CREATE TABLE IF NOT EXISTS employees (
-                id PRIMARY KEY,
+                id INTEGER PRIMARY KEY,
                 first_name TEXT,
                 last_name TEXT,
                 job_title TEXT,

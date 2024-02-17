@@ -47,7 +47,7 @@ class Order:
     def employee_id(self):
         return self._employee_id
 
-    employee_id.setter
+    @employee_id.setter
     def employee_id(self, employee_id):
         if isinstance(employee_id,int):
             self._employee_id = employee_id
@@ -55,3 +55,27 @@ class Order:
             raise ValueError(
                 "The employee entered isn't in the database. Please enter another employee to assign this order to."
             )
+
+    @classmethod
+    def create_table(cls):
+        sql = """
+            CREATE TABLE IF NOT EXISTS orders (
+                id INTEGER PRIMARY KEY
+                title TEXT
+                ordering_doctor TEXT
+                time_stamp DATETIME
+                completed BIT
+                employee_id INTEGER
+            )
+        """
+        CURSOR.execute(sql)
+        CONN.commit()
+
+
+    @classmethod
+    def drop_table(cls):
+        sql="""
+            DROP TABLE IF EXISTS orders;
+        """
+        CURSOR.execute(sql)
+        CONN.commit()
