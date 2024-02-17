@@ -133,3 +133,25 @@ class Order:
         del type(self).all[self.id]
 
         self.id = None
+
+    @classmethod
+    def instance_from_db(cls,row):
+        order = cls.all.get(row[0])
+
+        if order:
+            order.title = row[1]
+            order.ordering_doctor = row[2]
+            order.completed = row[3]
+            order.employee_id = row[4]
+            order.save_time_stamp = row[5]
+
+        else:
+            order = cls(row[1], row[2], row[3], row[4])
+            order.id = row[0]
+            cls.all[order.id] = order
+            order.time_stamp = row[5]
+
+        return order
+
+    @classmethod
+    def get_all(cls)
