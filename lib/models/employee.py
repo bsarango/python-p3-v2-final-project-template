@@ -64,17 +64,18 @@ class Employee:
                 last_name TEXT,
                 job_title TEXT,
                 department TEXT)
-            """
-            CURSOR.execute(sql)
-            CONN.commit()
+        """
+        CURSOR.execute(sql)
+        CONN.commit()
         
     @classmethod
     def drop_table(cls):
         sql = """
             DROP TABLE IF EXISTS employees;
-            """
-            CURSOR.execute(sql)
-            CONN.commit()
+         """
+         
+        CURSOR.execute(sql)
+        CONN.commit()
 
     def save(self):
         sql = """

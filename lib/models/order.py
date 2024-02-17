@@ -4,7 +4,7 @@ class Order:
 
     all = {}
 
-    def __init__(self, title, ordering_doctor, completed = False, employee_id, time_stamp=None, id=None):
+    def __init__(self, title, ordering_doctor, completed, employee_id, time_stamp=None, id=None):
         self.title = title
         self.ordering_doctor = ordering_doctor
         self.completed = completed
@@ -96,7 +96,7 @@ class Order:
         type(self).all[self.id] = self
 
     
-    def save_time_stamp(self,id)
+    def save_time_stamp(self,id):
         sql = """
             SELECT * FROM orders
             WHERE id = ?
