@@ -27,9 +27,9 @@ class Employee:
         return self._last_name
 
     @last_name.setter
-    def last_name(self):
+    def last_name(self, last_name):
         if isinstance(last_name,str) and len(last_name)>0:
-            self._last_name
+            self._last_name = last_name
         else:
             raise ValueError("Last name must be a word and cannot be blank!")
 
@@ -73,7 +73,7 @@ class Employee:
         sql = """
             DROP TABLE IF EXISTS employees;
          """
-         
+
         CURSOR.execute(sql)
         CONN.commit()
 
