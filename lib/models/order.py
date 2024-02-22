@@ -82,7 +82,7 @@ class Order:
     def save(self):
         sql = """
             INSERT INTO orders (title, ordering_doctor, completed, employee_id, time_stamp)
-            VALUES (?, ?, ?, ?, NOW())
+            VALUES (?, ?, ?, ?, TIMESTAMP(NOW()))
         """
 
         CURSOR.execute(sql, (self.title, self.ordering_doctor, self.completed, self.employee_id))
