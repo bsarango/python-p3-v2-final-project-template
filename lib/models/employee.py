@@ -59,11 +59,11 @@ class Employee:
     def create_table(cls):
         sql = """
             CREATE TABLE IF NOT EXISTS employees (
-                id INTEGER PRIMARY KEY,
-                first_name TEXT,
-                last_name TEXT,
-                job_title TEXT,
-                department TEXT)
+            id INTEGER PRIMARY KEY,
+            first_name TEXT,
+            last_name TEXT,
+            job_title TEXT,
+            department TEXT)
         """
         CURSOR.execute(sql)
         CONN.commit()

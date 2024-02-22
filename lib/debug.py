@@ -8,10 +8,10 @@ import ipdb
 
 
 def reset_database():
-    Employee.drop_table
-    Employee.create_table
-    Order.drop_table
-    Order.create_table
+    Employee.drop_table()
+    Employee.create_table()
+    Order.drop_table()
+    Order.create_table()
 
     unit_clerk = Employee.create("Jane", "Doe", "Unit Clerk", "Neurology")
     telemetry_technician = Employee.create("Brian", "Sarango", "Telemetry Technician", "Telemetry")

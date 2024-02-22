@@ -38,7 +38,7 @@ class Order:
 
     @completed.setter
     def completed(self,completed):
-        if isinstance(completed, int) and int == 1 or int ==0:
+        if isinstance(completed, int) and (int == 1 or int ==0):
             self._completed = completed
         else:
             raise ValueError("Order's completed status must be either 0 or 1!")
@@ -60,13 +60,12 @@ class Order:
     def create_table(cls):
         sql = """
             CREATE TABLE IF NOT EXISTS orders (
-                id INTEGER PRIMARY KEY
-                title TEXT
-                ordering_doctor TEXT
-                completed BIT
-                employee_id INTEGER
-                time_stamp DATETIME
-            )
+            id INTEGER PRIMARY KEY,
+            title TEXT,
+            ordering_doctor TEXT,
+            completed BIT,
+            employee_id INTEGER,
+            time_stamp DATETIME)
         """
         CURSOR.execute(sql)
         CONN.commit()
