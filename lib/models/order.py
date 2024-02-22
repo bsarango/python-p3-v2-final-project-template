@@ -89,7 +89,7 @@ class Order:
             VALUES (?, ?, ?, ?, ?)
         """
 
-        CURSOR.execute(sql, (self.title, self.ordering_doctor, self.completed, self.employee_id), self.time_stamp)
+        CURSOR.execute(sql, (self.title, self.ordering_doctor, self.completed, self.employee_id, self.time_stamp))
         CONN.commit()
 
         self.id = CURSOR.lastrowid

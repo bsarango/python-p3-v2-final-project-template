@@ -24,5 +24,5 @@ def reset_database():
     Order.create("Diet","Lee",0,neuro_sdu_rn.id)
     Order.create("Remote Telemetry Placement", Jones, telemetry_technician.id)
 
-#reset_database()
+reset_database()
 ipdb.set_trace()
