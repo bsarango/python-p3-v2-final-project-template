@@ -82,7 +82,7 @@ class Order:
 
     def save(self):
 
-        self.time_stamp = datetime.datetime.now()
+        self.time_stamp = str(datetime.datetime.now())
 
         sql = """
             INSERT INTO orders (title, ordering_doctor, completed, employee_id, time_stamp)
