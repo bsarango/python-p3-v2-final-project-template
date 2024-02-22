@@ -22,7 +22,7 @@ def reset_database():
     Order.create("Administer Medication","Lee",1,neuro_sdu_rn.id)
     Order.create("Transfer Patient","Jones",0,unit_clerk.id)
     Order.create("Diet","Lee",0,neuro_sdu_rn.id)
-    Order.create("Remote Telemetry Placement", Jones, telemetry_technician.id)
+    Order.create("Remote Telemetry Placement", "Jones", 0,telemetry_technician.id)
 
 reset_database()
 ipdb.set_trace()
