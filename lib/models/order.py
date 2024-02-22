@@ -38,10 +38,10 @@ class Order:
 
     @completed.setter
     def completed(self,completed):
-        if isinstance(completed, bool):
+        if isinstance(completed, int) and int == 1 or int ==0:
             self._completed = completed
         else:
-            raise ValueError("Order's completed status must be a True or False value!")
+            raise ValueError("Order's completed status must be either 0 or 1!")
 
     @property
     def employee_id(self):
