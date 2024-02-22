@@ -38,7 +38,7 @@ class Order:
 
     @completed.setter
     def completed(self,completed):
-        if isinstance(completed, int) and (int == 1 or int ==0):
+        if isinstance(completed, int) and (completed == 1 or completed ==0):
             self._completed = completed
         else:
             raise ValueError("Order's completed status must be either 0 or 1!")
