@@ -1,4 +1,5 @@
 from models.__init__ import CURSOR, CONN
+import DATETIME
 
 class Order:
 
@@ -80,12 +81,15 @@ class Order:
         CONN.commit()
 
     def save(self):
+
+        self.time_stamp = datetime.datetime.now()
+
         sql = """
             INSERT INTO orders (title, ordering_doctor, completed, employee_id, time_stamp)
-            VALUES (?, ?, ?, ?, TIMESTAMP(NOW()))
+            VALUES (?, ?, ?, ?, ?)
         """
 
-        CURSOR.execute(sql, (self.title, self.ordering_doctor, self.completed, self.employee_id))
+        CURSOR.execute(sql, (self.title, self.ordering_doctor, self.completed, self.employee_id), self.time_stamp)
         CONN.commit()
 
         self.id = CURSOR.lastrowid
@@ -94,15 +98,6 @@ class Order:
 
         type(self).all[self.id] = self
 
-    
-    def save_time_stamp(self,id):
-        sql = """
-            SELECT * FROM orders
-            WHERE id = ?
-        """
-
-        row = CURSOR.execute(sql,(id,)).fetchone()
-        self.time_stamp = row[3]
 
     @classmethod
     def create(cls, title, ordering_doctor, completed, employee_id):
