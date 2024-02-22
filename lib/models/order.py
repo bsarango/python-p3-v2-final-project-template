@@ -1,5 +1,5 @@
 from models.__init__ import CURSOR, CONN
-import DATETIME
+import datetime
 
 class Order:
 
@@ -66,7 +66,7 @@ class Order:
             ordering_doctor TEXT,
             completed BIT,
             employee_id INTEGER,
-            time_stamp DATETIME)
+            time_stamp TEXT)
         """
         CURSOR.execute(sql)
         CONN.commit()
@@ -93,8 +93,6 @@ class Order:
         CONN.commit()
 
         self.id = CURSOR.lastrowid
-
-        self.save_time_stamp(self.id)
 
         type(self).all[self.id] = self
 
