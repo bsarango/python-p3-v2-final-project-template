@@ -10,7 +10,7 @@ def main():
     while True:
         menu()
         choice = input("> ")
-        if choice == "0":
+        if choice == "d":
             exit_program()
         elif choice == "1":
             helper_1()
