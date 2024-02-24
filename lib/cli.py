@@ -10,10 +10,10 @@ def main():
     while True:
         menu()
         choice = input("> ")
-        if choice == "d":
+        if choice == "0":
             exit_program()
-        elif choice == "1":
-            helper_1()
+        elif choice == "e" or choice == "E":
+            list_employees()
         else:
             print("Invalid choice")
 
@@ -21,7 +21,8 @@ def main():
 def menu():
     print("Please select an option:")
     print("0. Exit the program")
-    print("1. Some useful function")
+    print("e. Display all the employees")
+    
 
 
 if __name__ == "__main__":
