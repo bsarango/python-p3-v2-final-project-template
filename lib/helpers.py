@@ -20,7 +20,12 @@ def employees_menu():
 
 def employee_submenu(employee):
     print(f"You are currently viewing {employee[first_name]} {employee[last_name]}'s profile. Do you wish to perform any actions?")
+    print(f"First name: {employee[first_name]}")
+    print(f"Last name: {employee[last_name]}")
+    print(f"Position: {employee[job_title]}")
+    print(f"Department: {employee[department]}")
 
+    
 
 def exit_program():
     print("Goodbye!")
