@@ -74,6 +74,17 @@ def orders_menu():
         print("Select one of the orders by the number next to it to view it's details, select b to go back, or 0 to exit")
         choice = input("> ")
 
+        if user_input == "0":
+            exit_program()
+        elif user_input == "b" or user_input == "B":
+            print("Returning to the Main Menu")
+            return 
+        elif int(user_input) > 0 and int(user_input)<=len(orders):
+            # employee_submenu(employees[int(user_input)-1])
+            pass
+        else:
+            print("That isn't a valid choice. Please choose again!")
+
 
 def exit_program():
     print("Goodbye!")
