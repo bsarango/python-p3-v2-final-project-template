@@ -155,3 +155,8 @@ class Employee:
         row = CURSOR.execute(sql,(id,)).fetchone()
 
         return cls.instance_from_db(row) if row else None
+
+    def orders(self):
+        from models.order import Order
+        orders = Orders.get_all()
+        return [order for order in orders if order.employee_id == self.id]
