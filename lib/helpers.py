@@ -22,7 +22,7 @@ def employees_menu():
         if user_input == "0":
             exit_program
         elif user_input == "b" or user_input == "B":
-            print"Returning to the Main Menu"
+            print("Returning to the Main Menu")
             return 
         elif int(user_input) > 0 and int(user_input)<len(employees):
             employee_submenu(employees[int(user_input)-1])
@@ -36,7 +36,12 @@ def employee_submenu(employee):
     print(f"Position: {employee.job_title}")
     print(f"Department: {employee.department}")
 
-
+    while True:
+        print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
+        print(f"Enter u to updated {employee.first_name} {employee.last_name} information")
+        print(f"Enter d to delete {employee.first_name} {employee.last_name}'s profile")
+        print("Enter b to go back to the previous menu")
+        print("Enter 0 to exit the program")
 
 def exit_program():
     print("Goodbye!")
