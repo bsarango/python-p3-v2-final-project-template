@@ -22,7 +22,8 @@ def employees_menu():
         if user_input == "0":
             exit_program
         elif user_input == "b" or user_input == "B":
-            return "Returning to Main Menu"
+            print"Returning to the Main Menu"
+            return 
         elif int(user_input) > 0 and int(user_input)<len(employees):
             employee_submenu(employees[int(user_input)-1])
         else:
