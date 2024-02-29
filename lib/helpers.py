@@ -13,10 +13,15 @@ def department_menu():
 
 def employees_menu():
     employees = Employee.get_all()
-    print("Select one of the employees by choosing the number next to their name to view their details.")
-    list_employees(employees)
-    employee_index = int(input("Select one of the employees by selecting the number next to them: "))
-    employee_submenu(employees[employee_index-1])
+
+    while True:
+        print("Your current employees:")
+        list_employees(employees)
+        employee_index = int(input("Select one of the employees by selecting the number next to them: "))
+        if employee_index > 0 and employee_index<len(employees):
+            employee_submenu(employees[employee_index-1])
+        else:
+            print("THat isn't a valid choice. Please choose again!")
 
 def employee_submenu(employee):
     print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
