@@ -20,11 +20,11 @@ def employees_menu():
         user_input = (input("Select one of the employees by selecting the number next to them, enter 'b' for back or 0 to exit: "))
 
         if user_input == "0":
-            exit_program
+            exit_program()
         elif user_input == "b" or user_input == "B":
             print("Returning to the Main Menu")
             return 
-        elif int(user_input) > 0 and int(user_input)<len(employees):
+        elif int(user_input) > 0 and int(user_input)<=len(employees):
             employee_submenu(employees[int(user_input)-1])
         else:
             print("That isn't a valid choice. Please choose again!")
