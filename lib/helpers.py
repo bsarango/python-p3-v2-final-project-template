@@ -52,7 +52,8 @@ def employee_submenu(employee):
 
         choice = input(">")
         if choice == "o" or choice == "O":
-            pass
+            current_employee_orders = employee.orders()
+            list_employee_orders(current_employee_orders)
         elif choice == "u" or choice == "U":
             pass
         elif choice == "d" or choice == "D":
