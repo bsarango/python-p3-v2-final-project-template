@@ -85,6 +85,13 @@ def orders_menu():
         else:
             print("That isn't a valid choice. Please choose again!")
 
+def order_submenu(order):
+    print("Order details:")
+    print(f"Title: {order.title}")
+    print(f"Ordering Doctor: {order.ordering_doctor}")
+    print(f"Completion Status: {order.completed}")
+    print(f"Order issue time and date: {order.time_stamp}")
+
 
 def exit_program():
     print("Goodbye!")
