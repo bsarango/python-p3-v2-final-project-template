@@ -80,7 +80,7 @@ def orders_menu():
             print("Returning to the Main Menu")
             return 
         elif int(choice) > 0 and int(choice)<=len(orders):
-            # employee_submenu(employees[int(choice)-1])
+            order_submenu(orders[int(choice)-1])
             pass
         else:
             print("That isn't a valid choice. Please choose again!")
