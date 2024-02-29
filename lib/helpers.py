@@ -4,7 +4,7 @@ from models.order import Order
 
 def list_employees(employees):
     # employees = Employee.get_all()
-    for count, ele in enumerate(employees):
+    for count, ele in enumerate(employees, start=1):
         print(count,": ",ele.first_name, " ",ele.last_name)
     # print("Performing useful function#1.")
 
