@@ -2,7 +2,10 @@
 
 from helpers import (
     exit_program,
-    helper_1
+    list_employees,
+    department_menu,
+    employees_menu,
+    employee_submenu
 )
 
 
