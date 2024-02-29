@@ -8,6 +8,10 @@ def list_employees(employees):
         print(count,": ",ele.first_name, " ",ele.last_name)
     # print("Performing useful function#1.")
 
+def list_orders(orders):
+    for count, ele in enumearte(orders, start=1):
+        print( "Orders to be listed")
+
 def department_menu():
     pass
 
