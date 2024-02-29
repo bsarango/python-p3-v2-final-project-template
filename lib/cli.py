@@ -17,6 +17,8 @@ def main():
             exit_program()
         elif choice == "e" or choice == "E":
             employees_menu()
+        elif choice =="o" or choice == "O":
+            orders_menu()
         else:
             print("Invalid choice")
 

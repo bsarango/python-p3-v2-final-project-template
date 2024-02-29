@@ -45,7 +45,7 @@ def employee_submenu(employee):
 
     while True:
         print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
-        print(f"Enter u to updated {employee.first_name} {employee.last_name} information")
+        print(f"Enter u to update {employee.first_name} {employee.last_name} information")
         print(f"Enter d to delete {employee.first_name} {employee.last_name}'s profile")
         print("Enter b to go back to the previous menu")
         print("Enter 0 to exit the program")
@@ -65,6 +65,10 @@ def employee_submenu(employee):
             exit_program()
         else:
             print("That isn't a valid choice. Please choose again!")
+
+def orders_menu():
+    orders = Order.get_all()
+    
 
 def exit_program():
     print("Goodbye!")
