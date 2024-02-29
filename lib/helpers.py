@@ -5,7 +5,7 @@ from models.order import Order
 def list_employees(employees):
     # employees = Employee.get_all()
     for count, ele in enumerate(employees):
-        print(count,": ",ele[first_name], " ",ele[last_name])
+        print(count,": ",ele.first_name, " ",ele.last_name)
     # print("Performing useful function#1.")
 
 def department_menu():
@@ -25,7 +25,7 @@ def employee_submenu(employee):
     print(f"Position: {employee[job_title]}")
     print(f"Department: {employee[department]}")
 
-    
+
 
 def exit_program():
     print("Goodbye!")
