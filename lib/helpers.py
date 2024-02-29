@@ -12,6 +12,9 @@ def list_orders(orders):
     for count, ele in enumearte(orders, start=1):
         print( "Orders to be listed")
 
+def list_employee_orders(employee):
+    pass
+
 def department_menu():
     pass
 
