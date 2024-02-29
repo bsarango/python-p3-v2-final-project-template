@@ -43,6 +43,21 @@ def employee_submenu(employee):
         print("Enter b to go back to the previous menu")
         print("Enter 0 to exit the program")
 
+        choice = input(">")
+        if choice == "o" or choice == "O":
+            pass
+        elif choice == "u" or choice == "U":
+            pass
+        elif choice == "d" or choice == "D":
+            pass
+        elif choice == "b" or choice == "B":
+            print("Returning to the Previous Menu")
+            return
+        elif choice == "0":
+            exit_program()
+        else:
+            print("That isn't a valid choice. Please choose again!")
+
 def exit_program():
     print("Goodbye!")
     exit()
