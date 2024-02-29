@@ -68,7 +68,12 @@ def employee_submenu(employee):
 
 def orders_menu():
     orders = Order.get_all()
-    
+    while True:
+        print("All current orders: ")
+        list_orders(orders)
+        print("Select one of the orders by the number next to it to view it's details, select b to go back, or 0 to exit")
+        choice = input("> ")
+
 
 def exit_program():
     print("Goodbye!")
