@@ -24,15 +24,15 @@ def employees_menu():
     while True:
         print("Your current employees:")
         list_employees(employees)
-        user_input = (input("Select one of the employees by selecting the number next to them, enter 'b' for back or 0 to exit: "))
+        choice = (input("Select one of the employees by selecting the number next to them, enter 'b' for back or 0 to exit: "))
 
-        if user_input == "0":
+        if choice == "0":
             exit_program()
-        elif user_input == "b" or user_input == "B":
+        elif choice == "b" or choice == "B":
             print("Returning to the Main Menu")
             return 
-        elif int(user_input) > 0 and int(user_input)<=len(employees):
-            employee_submenu(employees[int(user_input)-1])
+        elif int(choice) > 0 and int(choice)<=len(employees):
+            employee_submenu(employees[int(choice)-1])
         else:
             print("That isn't a valid choice. Please choose again!")
 
@@ -80,7 +80,7 @@ def orders_menu():
             print("Returning to the Main Menu")
             return 
         elif int(choice) > 0 and int(choice)<=len(orders):
-            # employee_submenu(employees[int(user_input)-1])
+            # employee_submenu(employees[int(choice)-1])
             pass
         else:
             print("That isn't a valid choice. Please choose again!")
