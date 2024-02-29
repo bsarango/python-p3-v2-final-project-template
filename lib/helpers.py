@@ -81,7 +81,6 @@ def orders_menu():
             return 
         elif int(choice) > 0 and int(choice)<=len(orders):
             order_submenu(orders[int(choice)-1])
-            pass
         else:
             print("That isn't a valid choice. Please choose again!")
 
@@ -92,6 +91,25 @@ def order_submenu(order):
     print(f"Completion Status: {order.completed}")
     print(f"Order issue time and date: {order.time_stamp}")
 
+    while True:
+        print("Enter u to update this order")
+        print("Enter d to delete this order")
+        print("Enter b to go back to the previous menu")
+        print("Enter 0 to exit the program")
+
+        choice = input(">")
+
+        if choice == "u" or choice == "U":
+            pass
+        elif choice == "d" or choice == "D":
+            pass
+        elif choice == "b" or choice == "B":
+            "Returning to the Previous Menu"
+            return
+        elif choice == "0":
+            exit_program()
+        else:
+            print("That isn't a valid choice. Please choose again!")
 
 def exit_program():
     print("Goodbye!")
