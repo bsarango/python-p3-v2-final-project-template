@@ -5,7 +5,7 @@ from helpers import (
     list_employees,
     department_menu,
     employees_menu,
-    employee_submenu
+    employee_submenu 
 )
 
 
@@ -16,7 +16,7 @@ def main():
         if choice == "0":
             exit_program()
         elif choice == "e" or choice == "E":
-            list_employees()
+            employees_menu()
         else:
             print("Invalid choice")
 
