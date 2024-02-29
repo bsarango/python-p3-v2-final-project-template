@@ -17,11 +17,16 @@ def employees_menu():
     while True:
         print("Your current employees:")
         list_employees(employees)
-        employee_index = int(input("Select one of the employees by selecting the number next to them: "))
-        if employee_index > 0 and employee_index<len(employees):
-            employee_submenu(employees[employee_index-1])
+        user_input = (input("Select one of the employees by selecting the number next to them, enter B for back or 0 to exit: "))
+
+        if user_input == "0":
+            exit_program
+        elif user_input == "b" or user_input == "B":
+            main()
+        elif int(user_input) > 0 and int(user_input)<len(employees):
+            employee_submenu(employees[int(user_inpu)t-1])
         else:
-            print("THat isn't a valid choice. Please choose again!")
+            print("That isn't a valid choice. Please choose again!")
 
 def employee_submenu(employee):
     print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
