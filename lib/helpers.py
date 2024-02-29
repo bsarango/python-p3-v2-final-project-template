@@ -10,7 +10,7 @@ def list_employees(employees):
 
 def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
-        print( "Orders to be listed")
+        print(count,": ",ele.title)
 
 def list_employee_orders(employee):
     pass
