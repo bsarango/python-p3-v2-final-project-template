@@ -9,7 +9,7 @@ def list_employees(employees):
     # print("Performing useful function#1.")
 
 def list_orders(orders):
-    for count, ele in enumearte(orders, start=1):
+    for count, ele in enumerate(orders, start=1):
         print( "Orders to be listed")
 
 def list_employee_orders(employee):
@@ -74,12 +74,12 @@ def orders_menu():
         print("Select one of the orders by the number next to it to view it's details, select b to go back, or 0 to exit")
         choice = input("> ")
 
-        if user_input == "0":
+        if choice == "0":
             exit_program()
-        elif user_input == "b" or user_input == "B":
+        elif choice == "b" or choice == "B":
             print("Returning to the Main Menu")
             return 
-        elif int(user_input) > 0 and int(user_input)<=len(orders):
+        elif int(choice) > 0 and int(choice)<=len(orders):
             # employee_submenu(employees[int(user_input)-1])
             pass
         else:
