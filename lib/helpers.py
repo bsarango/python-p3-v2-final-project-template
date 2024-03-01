@@ -12,6 +12,13 @@ def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
         print(count,": ",ele.title)
 
+def display_employee_info(employee):
+    print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
+    print(f"First name: {employee.first_name}")
+    print(f"Last name: {employee.last_name}")
+    print(f"Position: {employee.job_title}")
+    print(f"Department: {employee.department}")
+
 def create_employee():
     print("Are you sure you want to enter a new employee? Enter 'y' for yes or 'n' for no")
     choice = input(">")
@@ -98,11 +105,7 @@ def employees_menu():
             print("That isn't a valid choice. Please choose again!")
 
 def employee_submenu(employee):
-    print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
-    print(f"First name: {employee.first_name}")
-    print(f"Last name: {employee.last_name}")
-    print(f"Position: {employee.job_title}")
-    print(f"Department: {employee.department}")
+    display_employee_info(employee)
 
     while True:
         print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
