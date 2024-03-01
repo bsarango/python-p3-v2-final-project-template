@@ -15,9 +15,6 @@ def list_orders(orders):
 def list_employee_orders(employee):
     pass
 
-def department_menu():
-    pass
-
 def employees_menu():
     employees = Employee.get_all()
 
