@@ -12,9 +12,6 @@ def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
         print(count,": ",ele.title)
 
-def list_employee_orders(employee):
-    pass
-
 def employees_menu():
     employees = Employee.get_all()
 
