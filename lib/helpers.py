@@ -15,7 +15,7 @@ def list_orders(orders):
 def update_employee(employee):
     print("Are you sure you want to update the employee? Enter 'y' for yes or 'n' for no")
     choice = input(">")
-    if chioce == "y" or choice == "Y":
+    if choice == "y" or choice == "Y":
         try:
             first_name = input("Enter the new first name or leave blank to leave the same.") 
             if first_name == "":
@@ -92,7 +92,7 @@ def employee_submenu(employee):
             current_employee_orders = employee.orders()
             list_orders(current_employee_orders)
         elif choice == "u" or choice == "U":
-            pass
+            update_employee(employee)
         elif choice == "d" or choice == "D":
             pass
         elif choice == "b" or choice == "B":
