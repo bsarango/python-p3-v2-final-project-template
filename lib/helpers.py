@@ -12,6 +12,22 @@ def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
         print(count,": ",ele.title)
 
+def create_employee():
+    print("Are you sure you want to enter a new employee? Enter 'y' for yes or 'n' for no")
+    choice = input(">")
+    if choice == "y" or choice == "Y":
+        first_name = input("Enter the employee's first name: ")
+        last_name = input("Enter the employee's last name: ")
+        job_title = input("Enter the employee's job title: ")
+        department = input("Enter the employee's department: ")
+
+        try:
+            employee = Employee.create(first_name,last_name,job_title,department)
+            print(f"{employee.first_name} {employee.last_name} has been successfully added to the system!")
+
+        except Exception as exec:
+            print("There was an error in entering the new employee's info into the system. Try again.", exec) 
+
 def update_employee(employee):
     print("Are you sure you want to update the employee? Enter 'y' for yes or 'n' for no")
     choice = input(">")
