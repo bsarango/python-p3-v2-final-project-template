@@ -153,7 +153,7 @@ def employee_submenu(employee):
         if choice == "o" or choice == "O":
             current_employee_orders = employee.orders()
             list_orders(current_employee_orders)
-            print("Do you wish to manage the orders?")
+            manage_employee_orders(current_employee_orders)
 
         elif choice == "u" or choice == "U":
             update_employee(employee)
