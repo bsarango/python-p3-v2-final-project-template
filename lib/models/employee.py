@@ -158,5 +158,5 @@ class Employee:
 
     def orders(self):
         from models.order import Order
-        orders = Orders.get_all()
+        orders = Order.get_all()
         return [order for order in orders if order.employee_id == self.id]
