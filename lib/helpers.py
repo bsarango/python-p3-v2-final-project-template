@@ -84,10 +84,12 @@ def employees_menu():
     while True:
         print("Your current employees:")
         list_employees(employees)
-        choice = (input("Select one of the employees by selecting the number next to them, enter 'b' for back or 0 to exit: "))
+        choice = (input("Select one of the employees by selecting the number next to them, enter 'e' to enter a new employee's info, 'b' to return to the Main Menu, or 0 to exit: "))
 
         if choice == "0":
             exit_program()
+        elif choice == "e" or choice == 'E':
+            create_employee()
         elif choice == "b" or choice == "B":
             print("Returning to the Main Menu")
             return 
