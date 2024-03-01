@@ -135,7 +135,8 @@ def employee_submenu(employee):
         elif choice == "u" or choice == "U":
             update_employee(employee)
         elif choice == "d" or choice == "D":
-            pass
+            delete_employee(employee)
+            return
         elif choice == "b" or choice == "B":
             print("Returning to the Previous Menu")
             return
