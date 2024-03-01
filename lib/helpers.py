@@ -79,9 +79,8 @@ def update_employee(employee):
         
 
 def employees_menu():
-    employees = Employee.get_all()
-
     while True:
+        employees = Employee.get_all()
         print("Your current employees:")
         list_employees(employees)
         choice = (input("Select one of the employees by selecting the number next to them, enter 'e' to enter a new employee's info, 'b' to return to the Main Menu, or 0 to exit: "))
