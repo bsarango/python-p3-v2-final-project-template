@@ -27,6 +27,13 @@ def create_employee():
 
         except Exception as exec:
             print("There was an error in entering the new employee's info into the system. Try again.", exec) 
+    
+    elif choice == "n" or choice == 'N':
+        print("Returning to the previous menu")
+        return
+
+    else:
+        print("This isn't a valid choice, please try again!")
 
 def update_employee(employee):
     print("Are you sure you want to update the employee? Enter 'y' for yes or 'n' for no")
