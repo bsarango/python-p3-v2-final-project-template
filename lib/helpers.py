@@ -12,6 +12,49 @@ def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
         print(count,": ",ele.title)
 
+def update_employee(employee):
+    print("Are you sure you want to update the employee? Enter 'y' for yes or 'n' for no")
+    choice = input(">")
+    if chioce == "y" or choice == "Y":
+        try:
+            first_name = input("Enter the new first name or leave blank to leave the same.") 
+            if first_name == "":
+                print("Kept the same first name.")
+            else:
+                employee.first_name = first_name
+
+            last_name = input("Enter the new last name or leave blank to leave the same.")
+            if last_name == "":
+                print("Kept the same last name.")
+            else:
+                employee.last_name = last_name
+
+            job_title = input("Enter the new job title or leave blank to leave the same.")
+            if job_title == "":
+                print("Kept the same job title.")
+            else:
+                employee.job_title = job_title
+
+            department = input("Enter the new department or leave blank to leave the same.")
+            if department == "":
+                print("Kept the same department.")
+            else:
+                employee.department = department
+
+            employee.update()
+            print(f"{employee.first_name} {employee.last_name} has been updated successfully!")
+
+        except Exception as exec:
+            print(f"There was an error updating {employee.first_name} {employee.last}'s profile.", exec)
+    
+    elif choice == 'n' or choice == 'N':
+        print("Returning to the previous menu")
+        return
+
+    else:
+        print("This isn't a valid choice, please try again!")
+        
+
 def employees_menu():
     employees = Employee.get_all()
 
