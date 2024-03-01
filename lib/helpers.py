@@ -12,6 +12,27 @@ def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
         print(count,": ",ele.title)
 
+def manage_employee_orders(employee_orders):
+
+    while True:
+        print("Do you wish to add or manage an order?")
+        print("Enter a to add an order")
+        print("Enter the number of the order to manage the order")
+        print("Enter b to go back to the previous menu")
+
+        choice = input(">")
+
+        if choice == "a" or choice =="A":
+            pass
+        elif choice == "b" or choice == "B":
+            print("Returning to the previous menu")
+            return
+        elif int(choice) - 1 > 0 and int(choice)<= len(employee_orders):
+            order_submenu(employee_orders[int(choice)-1])
+        else:
+            print("This isn't a valid choice, please try again!")
+        
+
 def display_employee_info(employee):
     print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
     print(f"First name: {employee.first_name}")
@@ -132,6 +153,8 @@ def employee_submenu(employee):
         if choice == "o" or choice == "O":
             current_employee_orders = employee.orders()
             list_orders(current_employee_orders)
+            print("Do you wish to manage the orders?")
+
         elif choice == "u" or choice == "U":
             update_employee(employee)
         elif choice == "d" or choice == "D":
