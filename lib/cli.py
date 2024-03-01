@@ -3,7 +3,6 @@
 from helpers import (
     exit_program,
     list_employees,
-    department_menu,
     employees_menu,
     orders_menu 
 )
