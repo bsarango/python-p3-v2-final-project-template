@@ -109,16 +109,12 @@ def delete_employee(employee):
     print("Are you sure you want to delete this employee? Enter 'y' for yes or 'n' for no")
     choice = input(">")
     if choice == "y" or choice == "Y":
-        try:
-            employee.delete()
-            print(f"{employee.first_name} {employee.last_name} has been removed from the system.")
-            return
-        
-        except Exception as exec:
-            print("There was en error removing this employee. Try again.", exec)
+        employee.delete()
+        print(f"{employee.first_name} {employee.last_name} has been removed from the system.")
+        return
     
     else:
-        print("That isn't a valid choice. Please choose again!")
+        print("There was an issue removing this employee!")
     
 def employees_menu():
     while True:
