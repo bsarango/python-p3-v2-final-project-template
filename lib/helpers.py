@@ -11,7 +11,7 @@ def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
         print(count,": ",ele.title)
 
-def create_order(employee):
+def create_order(employee_id):
     title = input("Enter the order title: ")
     ordering_doctor = input("Enter the ordering doctor: ")
     completed_response = input("Is this a completed order (y or n): ")
@@ -23,13 +23,13 @@ def create_order(employee):
     employee_id == employee.id
 
     try:
-        Order.create(title, ordering_doctor,completed,employee.id)
-        print(f"Order created for {employee.first_name} {employee.last_name}")
+        Order.create(title, ordering_doctor,completed,employee_id)
+        print(f"Order placed!")
 
     except Exception as exec:
         print("Failed to create an order. Try again.")
 
-def manage_employee_orders(employee_orders):
+def manage_employee_orders(employee_orders, employee_id):
 
     while True:
         print("Do you wish to add or manage an order?")
@@ -40,7 +40,7 @@ def manage_employee_orders(employee_orders):
         choice = input(">")
 
         if choice == "a" or choice =="A":
-            create_order()
+            create_order(employee_id)
         elif choice == "b" or choice == "B":
             print("Returning to the previous menu")
             return
@@ -166,7 +166,7 @@ def employee_submenu(employee):
         if choice == "o" or choice == "O":
             current_employee_orders = employee.orders()
             list_orders(current_employee_orders)
-            manage_employee_orders(current_employee_orders)
+            manage_employee_orders(current_employee_orders,employee.id)
 
         elif choice == "u" or choice == "U":
             update_employee(employee)
