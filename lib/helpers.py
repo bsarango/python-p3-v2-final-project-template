@@ -3,14 +3,31 @@ from models.employee import Employee
 from models.order import Order
 
 def list_employees(employees):
-    # employees = Employee.get_all()
     for count, ele in enumerate(employees, start=1):
         print(count,": ",ele.first_name, " ",ele.last_name)
-    # print("Performing useful function#1.")
+    
 
 def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
         print(count,": ",ele.title)
+
+def create_order(employee):
+    title = input("Enter the order title: ")
+    ordering_doctor = input("Enter the ordering doctor: ")
+    completed_response = input("Is this a completed order (y or n): ")
+    completed = None
+    if completed_response == 'y' or completed =="Y":
+        completed = 1
+    elif completed_response == 'n' or completed_response == "N":
+        completed = 0
+    employee_id == employee.id
+
+    try:
+        Order.create(title, ordering_doctor,completed,employee.id)
+        print(f"Order created for {employee.first_name} {employee.last_name}")
+
+    except Exception as exec:
+        print("Failed to create an order. Try again.")
 
 def manage_employee_orders(employee_orders):
 
