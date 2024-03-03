@@ -29,6 +29,18 @@ def create_order(employee_id):
     except Exception as exec:
         print("Failed to create an order. Try again.")
 
+def delete_order(order):
+    print("Are you sure you want to delete this order? Enter y or n")
+    choice = input(">")
+    if choice == "y" or choice == "Y":
+        order.delete()
+        print(f"The {employee.first_name} order has been removed.")
+        return
+    
+    else:
+        print("There was an issue removing this order!")
+    
+
 def manage_employee_orders(employee_orders, employee_id):
 
     while True:
