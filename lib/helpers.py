@@ -40,7 +40,7 @@ def manage_employee_orders(employee_orders):
         choice = input(">")
 
         if choice == "a" or choice =="A":
-            pass
+            create_order()
         elif choice == "b" or choice == "B":
             print("Returning to the previous menu")
             return
