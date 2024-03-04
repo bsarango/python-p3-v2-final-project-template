@@ -11,7 +11,7 @@ def list_orders(orders):
     for count, ele in enumerate(orders, start=1):
         print(count,": ",ele.title)
 
-def create_order(employee_id):
+def create_order(_id):
     title = input("Enter the order title: ")
     ordering_doctor = input("Enter the ordering doctor: ")
     completed_response = input("Is this a completed order (y or n): ")
@@ -20,7 +20,8 @@ def create_order(employee_id):
         completed = 1
     elif completed_response == 'n' or completed_response == "N":
         completed = 0
-    employee_id == employee.id
+
+    employee_id = _id
 
     try:
         Order.create(title, ordering_doctor,completed,employee_id)
