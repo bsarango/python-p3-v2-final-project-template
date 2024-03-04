@@ -119,7 +119,7 @@ class Order:
             WHERE id = ?
         """
 
-        CURSOR.execute(sql,(self.id,))
+        CURSOR.execute(sql,(self.id))
         CONN.execute()
 
         del type(self).all[self.id]
