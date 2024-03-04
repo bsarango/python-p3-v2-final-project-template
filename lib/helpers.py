@@ -56,7 +56,7 @@ def manage_employee_orders(employee_orders, employee_id):
         elif choice == "b" or choice == "B":
             print("Returning to the previous menu")
             return
-        elif int(choice) - 1 > 0 and int(choice)<= len(employee_orders):
+        elif int(choice) > 0 and int(choice)<= len(employee_orders):
             order_submenu(employee_orders[int(choice)-1])
         else:
             print("This isn't a valid choice, please try again!")
