@@ -229,7 +229,7 @@ def order_submenu(order):
         if choice == "u" or choice == "U":
             pass
         elif choice == "d" or choice == "D":
-            pass
+            delete_order(order)
         elif choice == "b" or choice == "B":
             "Returning to the Previous Menu"
             return
