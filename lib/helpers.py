@@ -40,6 +40,28 @@ def delete_order(order):
     
     else:
         print("There was an issue removing this order!")
+
+def update_order(order):
+    print("Enter d to update the ordering doctor")
+    print("Enter c to mark as completed")
+
+    choice = input(">")
+
+    if choice == "d":
+        new_doctor = input("Enter the new doctor: ")
+        order.ordering_doctor = new_doctor
+        order.save()
+        print("The ordering doctor has been updated!")
+
+    elif choice == "c":
+        if order.completed == 1:
+            print("The order is already completed")
+        else:
+            order.completed = 1
+            print("The order now has a completed status!")
+    
+    else:
+        print("This isn't a valid choice, please try again!")
     
 
 def manage_employee_orders(employee_orders, employee_id):
