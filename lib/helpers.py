@@ -250,7 +250,7 @@ def order_submenu(order):
         choice = input(">")
 
         if choice == "u" or choice == "U":
-            pass
+            update_order(order)
         elif choice == "d" or choice == "D":
             delete_order(order)
         elif choice == "b" or choice == "B":
