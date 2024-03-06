@@ -182,7 +182,11 @@ def employees_menu():
         employees = Employee.get_all()
         print("Your current employees:")
         list_employees(employees)
-        choice = (input("Select one of the employees by selecting the number next to them, enter 'e' to enter a new employee's info, 'b' to return to the Main Menu, or 0 to exit: "))
+        print("Select one of the following:")
+        print("Enter an Employee by their respective number:")
+        print("Enter e to enter an employee to the system:")
+        print("Enter b to return to the main menu:")
+        choice = input("> ")
 
         if choice == "0":
             exit_program()
