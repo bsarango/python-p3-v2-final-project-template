@@ -244,13 +244,8 @@ def orders_menu():
             print("That isn't a valid choice. Please choose again!")
 
 def order_submenu(order):
-    print("Order details:")
-    print(f"Title: {order.title}")
-    print(f"Ordering Doctor: {order.ordering_doctor}")
-    print(f"Completion Status: {order.completed}")
-    print(f"Order issue time and date: {order.time_stamp}")
-
     while True:
+        display_order_info(order)
         print("Enter u to update this order")
         print("Enter d to delete this order")
         print("Enter b to go back to the previous menu")
