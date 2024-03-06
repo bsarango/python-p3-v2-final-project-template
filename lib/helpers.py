@@ -201,9 +201,8 @@ def employees_menu():
             print("That isn't a valid choice. Please choose again!")
 
 def employee_submenu(employee):
-    display_employee_info(employee)
-
     while True:
+        display_employee_info(employee)
         print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
         print(f"Enter u to update {employee.first_name} {employee.last_name} information")
         print(f"Enter d to delete {employee.first_name} {employee.last_name}'s profile")
