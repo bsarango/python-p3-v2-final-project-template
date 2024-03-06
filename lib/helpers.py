@@ -226,8 +226,8 @@ def employee_submenu(employee):
             print("That isn't a valid choice. Please choose again!")
 
 def orders_menu():
-    orders = Order.get_all()
     while True:
+        orders = Order.get_all()
         print("All current orders: ")
         list_orders(orders)
         print("Select one of the orders by the number next to it to view it's details, select b to go back, or 0 to exit")
