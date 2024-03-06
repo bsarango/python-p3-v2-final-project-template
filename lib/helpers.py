@@ -84,6 +84,15 @@ def manage_employee_orders(employee_orders, employee_id):
         else:
             print("This isn't a valid choice, please try again!")
         
+def display_order_info(order):
+    print("Order details:")
+    print(f"Title: {order.title}")
+    print(f"Ordering Doctor: {order.ordering_doctor}")
+    if order.completed == 1:
+        print(f"Completion Status: Completed")
+    else:
+        print(f"Completion Status: Not Completed")
+    print(f"Order issue time and date: {order.time_stamp}")
 
 def display_employee_info(employee):
     print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
