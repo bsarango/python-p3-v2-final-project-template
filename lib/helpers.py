@@ -6,7 +6,6 @@ def list_employees(employees):
     for count, ele in enumerate(employees, start=1):
         print(count,": ",ele.first_name, " ",ele.last_name)
     
-
 def list_orders(orders):
     if len(orders)>0:
         for count, ele in enumerate(orders, start=1):
@@ -78,6 +77,7 @@ def manage_employee_orders(employee_orders, employee_id):
 
         if choice == "a" or choice =="A":
             create_order(employee_id)
+            return
         elif choice == "b" or choice == "B":
             print("Returning to the previous menu")
             return
