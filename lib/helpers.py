@@ -86,7 +86,10 @@ def manage_employee_orders(employee_orders, employee_id):
 def display_order_info(order):
     print("Order details:")
     print(f"Title: {order.title}")
-    print(f"Ordering Doctor: {order.ordering_doctor}") 
+    print(f"Ordering Doctor: {order.ordering_doctor}")
+    assigned_employee = order.employee()
+    print(f"Assigned employee: {assigned_employee.first_name} {assigned_employee.last_name}")
+     
     if order.completed == 1:
         print(f"Completion Status: Completed")
     else:
