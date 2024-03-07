@@ -200,7 +200,7 @@ def employees():
         else:
             print("That isn't a valid choice. Please choose again!")
 
-def employee_submenu(employee):
+def employee_options(employee):
     while True:
         display_employee_info(employee)
         print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
