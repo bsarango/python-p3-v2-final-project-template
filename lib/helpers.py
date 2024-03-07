@@ -228,7 +228,7 @@ def employee_options(employee):
         else:
             print("That isn't a valid choice. Please choose again!")
 
-def orders_menu():
+def orders():
     while True:
         orders = Order.get_all()
         print("All current orders: ")
