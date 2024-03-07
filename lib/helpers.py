@@ -86,7 +86,7 @@ def manage_employee_orders(employee_orders, employee_id):
 def display_order_info(order):
     print("Order details:")
     print(f"Title: {order.title}")
-    print(f"Ordering Doctor: {order.ordering_doctor}")
+    print(f"Ordering Doctor: {order.ordering_doctor}") 
     if order.completed == 1:
         print(f"Completion Status: Completed")
     else:
@@ -267,10 +267,7 @@ def orders_menu():
 def order_options(order):
     while True:
         display_order_info(order)
-        print("Enter u to update this order")
-        print("Enter d to delete this order")
-        print("Enter b to go back to the previous menu")
-        print("Enter 0 to exit the program")
+        order_options_menu()
 
         choice = input(">")
 

@@ -165,3 +165,8 @@ class Order:
         row = CURSOR.execute(sql,(id,)).fetchone()
 
         return cls.instance_from_db(row) if row else None
+
+    def employee(self):
+        from models.employee import Employee
+        employee = Employee.find_by_id(self.employee_id)
+        return employee
