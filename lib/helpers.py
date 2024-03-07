@@ -8,8 +8,11 @@ def list_employees(employees):
     
 
 def list_orders(orders):
-    for count, ele in enumerate(orders, start=1):
-        print(count,": ",ele.title)
+    if len(orders)>0:
+        for count, ele in enumerate(orders, start=1):
+            print(count,": ",ele.title)
+    else:
+        print("There are currently no orders assigned")
 
 def create_order(_id):
     title = input("Enter the order title: ")
