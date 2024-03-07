@@ -65,7 +65,6 @@ def update_order(order):
     
 
 def manage_employee_orders(employee_orders, employee_id):
-
     while True:
         print("Do you wish to add or manage an order?")
         print("Enter a to add an order")
@@ -93,6 +92,11 @@ def display_order_info(order):
     else:
         print(f"Completion Status: Not Completed")
     print(f"Order issue time and date: {order.time_stamp}")
+
+def reassign_orders(employee):
+    orders = employee.orders()
+    for order in orders:
+        order.ordering_doctor = None
 
 def display_employee_info(employee):
     print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
@@ -170,6 +174,7 @@ def delete_employee(employee):
     print("Are you sure you want to delete this employee? Enter 'y' for yes or 'n' for no")
     choice = input(">")
     if choice == "y" or choice == "Y":
+        reassign_orders(employee)
         employee.delete()
         print(f"{employee.first_name} {employee.last_name} has been removed from the system.")
         return
