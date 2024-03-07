@@ -187,6 +187,7 @@ def delete_employee(employee):
     
     else:
         print("There was an issue removing this employee!")
+        return
 
 def employee_options(employee):
     while True:
