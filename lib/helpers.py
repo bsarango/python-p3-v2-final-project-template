@@ -204,9 +204,9 @@ def employees():
 
 def employees_menu():
     print("Select one of the following:")
-        print("Enter an Employee by their respective number:")
-        print("Enter e to enter an employee to the system:")
-        print("Enter b to return to the main menu:")
+    print("Enter an Employee by their respective number:")
+    print("Enter e to enter an employee to the system:")
+    print("Enter b to return to the main menu:")
 
 def employee_options(employee):
     while True:
@@ -234,10 +234,10 @@ def employee_options(employee):
 
 def employee_options_menu(employee):
     print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
-        print(f"Enter u to update {employee.first_name} {employee.last_name} information")
-        print(f"Enter d to delete {employee.first_name} {employee.last_name}'s profile")
-        print("Enter b to go back to the previous menu")
-        print("Enter 0 to exit the program")
+    print(f"Enter u to update {employee.first_name} {employee.last_name} information")
+    print(f"Enter d to delete {employee.first_name} {employee.last_name}'s profile")
+    print("Enter b to go back to the previous menu")
+    print("Enter 0 to exit the program")
 
 def orders():
     while True:
@@ -285,6 +285,12 @@ def order_options(order):
             exit_program()
         else:
             print("That isn't a valid choice. Please choose again!")
+
+def order_options_menu()
+    print("Enter u to update this order")
+    print("Enter d to delete this order")
+    print("Enter b to go back to the previous menu")
+    print("Enter 0 to exit the program")
 
 def space_and_border():
     print("")
