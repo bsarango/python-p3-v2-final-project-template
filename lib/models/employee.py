@@ -149,7 +149,7 @@ class Employee:
     def find_by_id(cls,id):
         sql = """
             SELECT *
-            FROM departments
+            FROM employees
             WHERE id = ?
         """
 

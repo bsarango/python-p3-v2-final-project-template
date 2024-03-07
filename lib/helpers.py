@@ -89,7 +89,7 @@ def display_order_info(order):
     print(f"Ordering Doctor: {order.ordering_doctor}")
     assigned_employee = order.employee()
     print(f"Assigned employee: {assigned_employee.first_name} {assigned_employee.last_name}")
-     
+
     if order.completed == 1:
         print(f"Completion Status: Completed")
     else:
@@ -286,7 +286,7 @@ def order_options(order):
         else:
             print("That isn't a valid choice. Please choose again!")
 
-def order_options_menu()
+def order_options_menu():
     print("Enter u to update this order")
     print("Enter d to delete this order")
     print("Enter b to go back to the previous menu")
