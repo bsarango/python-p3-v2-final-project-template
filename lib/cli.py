@@ -3,8 +3,8 @@
 from helpers import (
     exit_program,
     list_employees,
-    employees_menu,
-    orders_menu 
+    employees,
+    orders 
 )
 
 
@@ -15,9 +15,9 @@ def main():
         if choice == "0":
             exit_program()
         elif choice == "e" or choice == "E":
-            employees_menu()
+            employees()
         elif choice =="o" or choice == "O":
-            orders_menu()
+            orders()
         else:
             print("Invalid choice")
 
