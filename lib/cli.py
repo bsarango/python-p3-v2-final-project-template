@@ -15,7 +15,9 @@ from helpers import (
 def welcome():
     print("Welcome, now starting your system!")
 
+
 def main():
+    space_and_border()
     while True:
         menu()
         choice = input("> ")
@@ -30,6 +32,7 @@ def main():
 
 
 def menu():
+    add_space()
     print("Please select an option:")
     print("0. Exit the program")
     print("e. Display all the employees")
@@ -37,6 +40,7 @@ def menu():
 
 
 def orders():
+    space_and_border()
     while True:
         orders = Order.get_all()
         print("All current orders: ")
@@ -56,12 +60,14 @@ def orders():
             print("That isn't a valid choice. Please choose again!")
 
 def orders_menu():
+    add_space()
     print("Select on of the following options:")
     print("Enter the number for the respective order")
     print("Enter b to go back")
     print("Enter 0 to exit the program")      
 
 def employees():
+    space_and_border()
     while True:
         employees = Employee.get_all()
         print("Your current employees:")
@@ -82,6 +88,7 @@ def employees():
             print("That isn't a valid choice. Please choose again!")   
 
 def employees_menu():
+    add_space()
     print("Select one of the following:")
     print("Enter an Employee by their respective number:")
     print("Enter e to enter an employee to the system:")

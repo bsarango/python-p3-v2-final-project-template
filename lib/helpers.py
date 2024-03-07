@@ -247,7 +247,7 @@ def order_options_menu():
 
 def space_and_border():
     print("")
-    print('/'* 15)
+    print('/'* 20)
     print("")
 
 def add_space():
