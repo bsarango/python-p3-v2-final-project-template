@@ -1,5 +1,7 @@
 # lib/cli.py
 
+from models.employee import Employee
+from models.order import Order
 from helpers import (
     exit_program, 
     space_and_border,
@@ -7,9 +9,7 @@ from helpers import (
     list_orders,
     create_employee,
     employee_options,
-    order_options
-    from models.employee import Employee
-    from models.order import Order
+    order_options,
 )
 
 def welcome():
