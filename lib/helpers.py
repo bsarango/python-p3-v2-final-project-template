@@ -187,10 +187,7 @@ def employees():
         employees = Employee.get_all()
         print("Your current employees:")
         list_employees(employees)
-        print("Select one of the following:")
-        print("Enter an Employee by their respective number:")
-        print("Enter e to enter an employee to the system:")
-        print("Enter b to return to the main menu:")
+        employees_menu()
         choice = input("> ")
 
         if choice == "0":
@@ -204,6 +201,12 @@ def employees():
             employee_options(employees[int(choice)-1])
         else:
             print("That isn't a valid choice. Please choose again!")
+
+def employees_menu():
+    print("Select one of the following:")
+        print("Enter an Employee by their respective number:")
+        print("Enter e to enter an employee to the system:")
+        print("Enter b to return to the main menu:")
 
 def employee_options(employee):
     while True:
