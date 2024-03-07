@@ -80,7 +80,7 @@ def manage_employee_orders(employee_orders, employee_id):
             print("Returning to the previous menu")
             return
         elif int(choice) > 0 and int(choice)<= len(employee_orders):
-    f order_options(employee_orders[int(choice)-1])
+            order_options(employee_orders[int(choice)-1])
         else:
             print("This isn't a valid choice, please try again!")
         
@@ -196,7 +196,7 @@ def employees():
             print("Returning to the Main Menu")
             return 
         elif int(choice) > 0 and int(choice)<=len(employees):
-            employee_submenu(employees[int(choice)-1])
+            employee_options(employees[int(choice)-1])
         else:
             print("That isn't a valid choice. Please choose again!")
 
@@ -242,7 +242,7 @@ def orders():
             print("Returning to the Main Menu")
             return 
         elif int(choice) > 0 and int(choice)<=len(orders):
-    f order_options(orders[int(choice)-1])
+            order_options(orders[int(choice)-1])
         else:
             print("That isn't a valid choice. Please choose again!")
 
