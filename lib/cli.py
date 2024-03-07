@@ -7,6 +7,8 @@ from helpers import (
     space_and_border
 )
 
+def welcome():
+    print("Welcome, now starting your system!")
 
 def main():
     while True:
@@ -31,4 +33,5 @@ def menu():
 
 
 if __name__ == "__main__":
+    welcome()
     main()
