@@ -2,9 +2,9 @@
 
 from helpers import (
     exit_program,
-    list_employees,
     employees,
-    orders 
+    orders, 
+    space_and_border
 )
 
 
@@ -27,6 +27,7 @@ def menu():
     print("0. Exit the program")
     print("e. Display all the employees")
     print("o, Display all orders")
+    space_and_border()
 
 
 if __name__ == "__main__":
