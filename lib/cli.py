@@ -32,6 +32,31 @@ def menu():
     space_and_border()
 
 
+def orders():
+    while True:
+        orders = Order.get_all()
+        print("All current orders: ")
+        list_orders(orders)
+        orders_menu()
+
+        choice = input("> ")
+
+        if choice == "0":
+            exit_program()
+        elif choice == "b" or choice == "B":
+            print("Returning to the Main Menu")
+            return 
+        elif int(choice) > 0 and int(choice)<=len(orders):
+            order_options(orders[int(choice)-1])
+        else:
+            print("That isn't a valid choice. Please choose again!")
+
+def orders_menu():
+    print("Select on of the following options:")
+    print("Enter the number for the respective order")
+    print("Enter b to go back")
+    print("Enter 0 to exit the program")         
+
 if __name__ == "__main__":
     welcome()
     main()
