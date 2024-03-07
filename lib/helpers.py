@@ -177,7 +177,7 @@ def delete_employee(employee):
     else:
         print("There was an issue removing this employee!")
     
-def employees_menu():
+def employees():
     while True:
         employees = Employee.get_all()
         print("Your current employees:")
