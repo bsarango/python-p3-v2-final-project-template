@@ -8,6 +8,8 @@ from helpers import (
     create_employee,
     employee_options,
     order_options
+    from models.employee import Employee
+    from models.order import Order
 )
 
 def welcome():
