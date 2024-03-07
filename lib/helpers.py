@@ -250,6 +250,9 @@ def space_and_border():
     print('/'* 15)
     print("")
 
+def add_space():
+    print("")
+
 def exit_program():
     print("Goodbye!")
     exit()
