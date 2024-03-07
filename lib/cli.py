@@ -34,7 +34,6 @@ def menu():
     print("0. Exit the program")
     print("e. Display all the employees")
     print("o, Display all orders")
-    space_and_border()
 
 
 def orders():
