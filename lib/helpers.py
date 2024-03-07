@@ -244,7 +244,8 @@ def orders():
         orders = Order.get_all()
         print("All current orders: ")
         list_orders(orders)
-        print("Select one of the orders by the number next to it to view it's details, select b to go back, or 0 to exit")
+        orders_menu()
+
         choice = input("> ")
 
         if choice == "0":
@@ -256,6 +257,12 @@ def orders():
             order_options(orders[int(choice)-1])
         else:
             print("That isn't a valid choice. Please choose again!")
+
+def orders_menu():
+    print("Select on of the following options:")
+    print("Enter the number for the respective order")
+    print("Enter b to go back")
+    print("Enter 0 to exit the program") 
 
 def order_options(order):
     while True:
