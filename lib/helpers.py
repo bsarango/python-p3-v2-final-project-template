@@ -273,6 +273,11 @@ def order_options(order):
         else:
             print("That isn't a valid choice. Please choose again!")
 
+def space_and_border():
+    print("")
+    print('/'* 15)
+    print("")
+
 def exit_program():
     print("Goodbye!")
     exit()
