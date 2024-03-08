@@ -14,6 +14,7 @@ def list_orders(orders):
         print("There are currently no orders assigned")
 
 def create_order(_id):
+    add_space
     title = input("Enter the order title: ")
     ordering_doctor = input("Enter the ordering doctor: ")
     completed_response = input("Is this a completed order (y or n): ")
@@ -27,12 +28,15 @@ def create_order(_id):
 
     try:
         Order.create(title, ordering_doctor,completed,employee_id)
+        add_space()
         print(f"Order placed!")
 
     except Exception as exec:
+        add_space()
         print("Failed to create an order. Try again.")
 
 def delete_order(order):
+    add_space()
     print("Are you sure you want to delete this order? Enter y or n")
     choice = input(">")
     if choice == "y" or choice == "Y":
