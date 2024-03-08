@@ -14,7 +14,8 @@ from helpers import (
 )
 
 def welcome():
-    print(cli_color_py.green("Welcome, now starting your system!"))
+    print(cli_color_py.green("Welcome and thank you for using our system \nNow starting your system!"))
+    print(cli_color_py.green("Please read and follow prompts to navigate menus and select options for your employees or orders"))
 
 
 def main():

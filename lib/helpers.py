@@ -14,7 +14,7 @@ def list_orders(orders):
         for count, ele in enumerate(orders, start=1):
             print(count,": ",ele.title)
     else:
-        print("There are currently no orders assigned")
+        print(cli_color_py.yellow("There are currently no orders assigned"))
 
 def create_order(_id):
     add_space
