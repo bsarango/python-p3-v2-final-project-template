@@ -305,5 +305,6 @@ def add_space():
 
 def exit_program():
     space_and_border()
-    print("Goodbye!")
+    print(cli_color_py.green("Now closing the system, thank you for your hard work!"))
+    print(cli_color_py.green("Goodbye!"))
     exit()
