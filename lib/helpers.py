@@ -3,10 +3,12 @@ from models.employee import Employee
 from models.order import Order
 
 def list_employees(employees):
+    add_space()
     for count, ele in enumerate(employees, start=1):
         print(count,": ",ele.first_name, " ",ele.last_name)
     
 def list_orders(orders):
+    add_space()
     if len(orders)>0:
         for count, ele in enumerate(orders, start=1):
             print(count,": ",ele.title)
