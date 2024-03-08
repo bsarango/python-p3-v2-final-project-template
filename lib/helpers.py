@@ -44,6 +44,7 @@ def delete_order(order):
         print("There was an issue removing this order!")
 
 def update_order(order):
+    add_space()
     print("Enter d to update the ordering doctor")
     print("Enter c to mark as completed")
     print("Enter e to changed assigned employee")
