@@ -73,6 +73,7 @@ def update_order(order):
 
 def manage_employee_orders(employee_orders, employee_id):
     while True:
+        add_space()
         print("Do you wish to add or manage an order?")
         print("Enter a to add an order")
         print("Enter the number of the order to manage the order")
