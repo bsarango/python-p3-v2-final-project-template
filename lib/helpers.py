@@ -53,7 +53,7 @@ def update_order(order):
     if choice == "d":
         new_doctor = input("Enter the new doctor: ")
         order.ordering_doctor = new_doctor
-        order.save()
+        order.update()
         print("The ordering doctor has been updated!")
 
     elif choice == "c":
@@ -61,6 +61,7 @@ def update_order(order):
             print("The order is already completed")
         else:
             order.completed = 1
+            order.update()
             print("The order now has a completed status!")
 
     elif choice == 'e':
@@ -111,7 +112,7 @@ def change_assigned_employee(order):
     choice = input(">")
     new_employee = employees[int(choice)-1]
     order.employee_id = new_employee.id
-    order.save()
+    order.update()
     print("A new employee has been assigned to his order")
     
 
@@ -119,7 +120,7 @@ def reassign_orders(employee):
     orders = employee.orders()
     for order in orders:
         order.ordering_doctor = None
-        order.save()
+        order.update()
 
 def display_employee_info(employee):
     print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
