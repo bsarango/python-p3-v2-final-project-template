@@ -275,6 +275,7 @@ def order_options(order):
             print("That isn't a valid choice. Please choose again!")
 
 def order_options_menu():
+    add_space()
     print("Enter u to update this order")
     print("Enter d to delete this order")
     print("Enter b to go back to the previous menu")
