@@ -32,7 +32,7 @@ def create_order(_id):
     try:
         Order.create(title, ordering_doctor,completed,employee_id)
         add_space()
-        print(f"Order placed!")
+        print(cli_color_py.green("Order placed!"))
 
     except Exception as exec:
         add_space()
@@ -40,11 +40,11 @@ def create_order(_id):
 
 def delete_order(order):
     add_space()
-    print("Are you sure you want to delete this order? Enter y or n")
+    print(cli_color_py.yellow("Are you sure you want to delete this order? Enter y or n"))
     choice = input(">")
     if choice == "y" or choice == "Y":
         order.delete()
-        print(f"The {employee.first_name} order has been removed.")
+        print(cli_color_py.green(f"The {employee.first_name} order has been removed."))
         return
     
     else:
@@ -62,7 +62,7 @@ def update_order(order):
         new_doctor = input("Enter the new doctor: ")
         order.ordering_doctor = new_doctor
         order.update()
-        print("The ordering doctor has been updated!")
+        print(cli_color_py.green("The ordering doctor has been updated!"))
 
     elif choice == "c":
         if order.completed == 1:
@@ -70,13 +70,13 @@ def update_order(order):
         else:
             order.completed = 1
             order.update()
-            print("The order now has a completed status!")
+            print(cli_color_py.green("The order now has a completed status!"))
 
     elif choice == 'e':
         change_assigned_employee(order)
     
     else:
-        print("This isn't a valid choice, please try again!")
+        print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
     
 
 def manage_employee_orders(employee_orders, employee_id):
@@ -98,7 +98,7 @@ def manage_employee_orders(employee_orders, employee_id):
         elif int(choice) > 0 and int(choice)<= len(employee_orders):
             order_options(employee_orders[int(choice)-1])
         else:
-            print("This isn't a valid choice, please try again!")
+            print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
         
 def display_order_info(order):
     add_space()
@@ -130,7 +130,7 @@ def change_assigned_employee(order):
             new_employee = employees[int(choice)-1]
             order.employee_id = new_employee.id
             order.update()
-            print("A new employee has been assigned to this order")
+            print(cli_color_py.green("A new employee has been assigned to this order"))
             return
         elif choice == "b":
             print("Returning to the previous menu")
