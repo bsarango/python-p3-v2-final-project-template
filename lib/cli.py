@@ -14,7 +14,7 @@ from helpers import (
 )
 
 def welcome():
-    print(cli_color_py.blue("Welcome, now starting your system!"))
+    print(cli_color_py.green("Welcome, now starting your system!"))
 
 
 def main():
@@ -29,7 +29,7 @@ def main():
         elif choice =="o" or choice == "O":
             orders()
         else:
-            print("Invalid choice")
+            print(cli_color_py.yellow("Invalid choice"))
 
 
 def menu():
@@ -58,7 +58,7 @@ def orders():
         elif int(choice) > 0 and int(choice)<=len(orders):
             order_options(orders[int(choice)-1])
         else:
-            print("That isn't a valid choice. Please choose again!")
+            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
 
 def orders_menu():
     add_space()
@@ -87,7 +87,7 @@ def employees():
         elif int(choice) > 0 and int(choice)<=len(employees):
             employee_options(employees[int(choice)-1])
         else:
-            print("That isn't a valid choice. Please choose again!")   
+            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))   
 
 def employees_menu():
     add_space()
