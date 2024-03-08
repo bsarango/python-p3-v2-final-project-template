@@ -303,5 +303,6 @@ def add_space():
     print("")
 
 def exit_program():
+    space_and_border()
     print("Goodbye!")
     exit()
