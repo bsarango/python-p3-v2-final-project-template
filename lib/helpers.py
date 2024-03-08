@@ -1,6 +1,7 @@
 # lib/helpers.py
 from models.employee import Employee
 from models.order import Order
+import cli_color_py
 
 def list_employees(employees):
     add_space()
@@ -135,7 +136,7 @@ def change_assigned_employee(order):
             print("Returning to the previous menu")
             return
         else:
-            print("This isn't a valid choice, please try again!")
+            print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
 
 def reassign_orders(employee):
     orders = employee.orders()
@@ -173,7 +174,7 @@ def create_employee():
         return
 
     else:
-        print("This isn't a valid choice, please try again!")
+        print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
 
 def update_employee(employee):
     add_space()
@@ -216,7 +217,7 @@ def update_employee(employee):
         return
 
     else:
-        print("This isn't a valid choice, please try again!")
+        print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
         
 def delete_employee(employee):
     add_space()
@@ -257,7 +258,7 @@ def employee_options(employee):
         elif choice == "0":
             exit_program()
         else:
-            print("That isn't a valid choice. Please choose again!")
+            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
 
 def employee_options_menu(employee):
     add_space()
@@ -285,7 +286,7 @@ def order_options(order):
         elif choice == "0":
             exit_program()
         else:
-            print("That isn't a valid choice. Please choose again!")
+            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
 
 def order_options_menu():
     add_space()
