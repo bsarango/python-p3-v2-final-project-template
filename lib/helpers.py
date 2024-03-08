@@ -208,6 +208,7 @@ def update_employee(employee):
         print("This isn't a valid choice, please try again!")
         
 def delete_employee(employee):
+    add_space()
     print("Are you sure you want to delete this employee? Enter 'y' for yes or 'n' for no")
     choice = input(">")
     if choice == "y" or choice == "Y":
@@ -217,6 +218,7 @@ def delete_employee(employee):
         return
     
     else:
+        add_space()
         print("There was an issue removing this employee!")
         return
 
