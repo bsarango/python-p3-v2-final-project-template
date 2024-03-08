@@ -136,6 +136,7 @@ def reassign_orders(employee):
         order.update()
 
 def display_employee_info(employee):
+    add_space()
     print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
     print(f"First name: {employee.first_name}")
     print(f"Last name: {employee.last_name}")
