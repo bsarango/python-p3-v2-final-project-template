@@ -119,6 +119,7 @@ def reassign_orders(employee):
     orders = employee.orders()
     for order in orders:
         order.ordering_doctor = None
+        order.save()
 
 def display_employee_info(employee):
     print(f"You are currently viewing {employee.first_name} {employee.last_name}'s profile. Do you wish to perform any actions?")
