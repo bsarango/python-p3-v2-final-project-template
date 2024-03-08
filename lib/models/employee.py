@@ -21,7 +21,7 @@ class Employee:
         if isinstance(first_name,str) and len(first_name)>0:
             self._first_name = first_name
         else:
-            raise ValueError(cli_color_py.red.bold("First name must be word and cannot be blank!"))
+            raise ValueError(cli_color_py.red("First name must be word and cannot be blank!"))
 
     @property
     def last_name(self):
@@ -32,7 +32,7 @@ class Employee:
         if isinstance(last_name,str) and len(last_name)>0:
             self._last_name = last_name
         else:
-            raise ValueError(cli_color_py.red.bold("Last name must be a word and cannot be blank!"))
+            raise ValueError(cli_color_py.red("Last name must be a word and cannot be blank!"))
 
     @property
     def job_title(self):
@@ -43,7 +43,7 @@ class Employee:
         if isinstance(job_title,str) and len(job_title)>0:
             self._job_title = job_title
         else:
-            raise ValueError(cli_color_py.red.bold("The job title must be word(s) and cannot be blank!"))
+            raise ValueError(cli_color_py.red("The job title must be word(s) and cannot be blank!"))
 
     @property
     def department(self):
@@ -54,7 +54,7 @@ class Employee:
         if isinstance(department,str) and len(department):
             self._department = department
         else:
-            raise ValueError(cli_color_py.red.bold("The department has to be a word(s) and cannot be blank!"))
+            raise ValueError(cli_color_py.red("The department has to be a word(s) and cannot be blank!"))
 
     @classmethod
     def create_table(cls):
