@@ -143,6 +143,7 @@ def display_employee_info(employee):
     print(f"Department: {employee.department}")
 
 def create_employee():
+    add_space()
     print("Are you sure you want to enter a new employee? Enter 'y' for yes or 'n' for no")
     choice = input(">")
     if choice == "y" or choice == "Y":
@@ -166,6 +167,7 @@ def create_employee():
         print("This isn't a valid choice, please try again!")
 
 def update_employee(employee):
+    add_space()
     print("Are you sure you want to update the employee? Enter 'y' for yes or 'n' for no")
     choice = input(">")
     if choice == "y" or choice == "Y":
