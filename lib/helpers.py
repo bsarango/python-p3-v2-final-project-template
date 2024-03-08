@@ -105,16 +105,26 @@ def display_order_info(order):
     print(f"Order issue time and date: {order.time_stamp}")
 
 def change_assigned_employee(order):
-    employees = Employee.get_all()
-    list_employees(employees)
+    while True:
+        employees = Employee.get_all()
+        list_employees(employees)
 
-    print("Select one of the employees by their respective number to reassign the order")
-    choice = input(">")
-    new_employee = employees[int(choice)-1]
-    order.employee_id = new_employee.id
-    order.update()
-    print("A new employee has been assigned to his order")
-    
+        print("Select one of the employees by their respective number to reassign the order")
+        print("Enter b to cancel and go back")
+
+        choice = input(">")
+
+        if int(choice) > 0 and int(choice) <= len(employees):
+            new_employee = employees[int(choice)-1]
+            order.employee_id = new_employee.id
+            order.update()
+            print("A new employee has been assigned to his order")
+            return
+        elif choice == "b":
+            print("Returning to the previous menu")
+            return
+        else:
+            print("This isn't a valid choice, please try again!")
 
 def reassign_orders(employee):
     orders = employee.orders()
