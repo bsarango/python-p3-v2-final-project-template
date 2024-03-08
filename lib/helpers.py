@@ -46,6 +46,7 @@ def delete_order(order):
 def update_order(order):
     print("Enter d to update the ordering doctor")
     print("Enter c to mark as completed")
+    print("Enter e to changed assigned employee")
 
     choice = input(">")
 
@@ -61,6 +62,9 @@ def update_order(order):
         else:
             order.completed = 1
             print("The order now has a completed status!")
+
+    elif choice == 'e':
+        change_assigned_employee(order)
     
     else:
         print("This isn't a valid choice, please try again!")
@@ -107,6 +111,7 @@ def change_assigned_employee(order):
     choice = input(">")
     new_employee = employees[int(choice)-1]
     order.employee_id = new_employee.id
+    order.save()
     print("A new employee has been assigned to his order")
     
 
