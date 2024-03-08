@@ -80,11 +80,13 @@ def employees():
             exit_program()
         elif choice == "e" or choice == 'E':
             create_employee()
+            add_space()
         elif choice == "b" or choice == "B":
             print("Returning to the Main Menu")
             return 
         elif int(choice) > 0 and int(choice)<=len(employees):
             employee_options(employees[int(choice)-1])
+            add_space()
         else:
             print("That isn't a valid choice. Please choose again!")   
 
