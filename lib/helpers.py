@@ -99,6 +99,17 @@ def display_order_info(order):
         print(f"Completion Status: Not Completed")
     print(f"Order issue time and date: {order.time_stamp}")
 
+def change_assigned_employee(order):
+    employees = Employee.get_all()
+    list_employees(employees)
+
+    print("Select one of the employees by their respective number to reassign the order")
+    choice = input(">")
+    new_employee = employees[int(choice)-1]
+    order.employee_id = new_employee.id
+    print("A new employee has been assigned to his order")
+    
+
 def reassign_orders(employee):
     orders = employee.orders()
     for order in orders:
