@@ -1,5 +1,5 @@
 # lib/cli.py
-
+from cli-color-py import red, blue, green, yellow
 from models.employee import Employee
 from models.order import Order
 from helpers import (
