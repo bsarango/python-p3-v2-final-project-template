@@ -103,7 +103,7 @@ def display_order_info(order):
         print(f"Completion Status: Completed")
     else:
         print(f"Completion Status: Not Completed")
-        
+         
     print(f"Order issue time and date: {order.time_stamp}")
 
 def change_assigned_employee(order):
@@ -228,6 +228,7 @@ def employee_options(employee):
 
         choice = input(">")
         if choice == "o" or choice == "O":
+            space_and_border()
             current_employee_orders = employee.orders()
             list_orders(current_employee_orders)
             manage_employee_orders(current_employee_orders,employee.id)
@@ -255,6 +256,7 @@ def employee_options_menu(employee):
 
 def order_options(order):
     while True:
+        add_space()
         display_order_info(order)
         order_options_menu()
 

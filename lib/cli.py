@@ -37,7 +37,7 @@ def menu():
     print("Please select an option:")
     print("0. Exit the program")
     print("e. Display all the employees")
-    print("o, Display all orders")
+    print("o. Display all orders")
 
 
 def orders():
@@ -62,7 +62,7 @@ def orders():
 
 def orders_menu():
     add_space()
-    print("Select on of the following options:")
+    print("Select one of the following options:")
     print("Enter the number for the respective order")
     print("Enter b to go back")
     print("Enter 0 to exit the program")      
