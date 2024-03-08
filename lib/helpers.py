@@ -92,6 +92,7 @@ def manage_employee_orders(employee_orders, employee_id):
             print("This isn't a valid choice, please try again!")
         
 def display_order_info(order):
+    add_space()
     print("Order details:")
     print(f"Title: {order.title}")
     print(f"Ordering Doctor: {order.ordering_doctor}")
@@ -105,6 +106,7 @@ def display_order_info(order):
     print(f"Order issue time and date: {order.time_stamp}")
 
 def change_assigned_employee(order):
+    add_space()
     while True:
         employees = Employee.get_all()
         list_employees(employees)
