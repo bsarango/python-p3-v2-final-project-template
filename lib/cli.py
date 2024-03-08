@@ -1,5 +1,5 @@
 # lib/cli.py
-from cli-color-py import red, blue, green, yellow
+import cli_color_py
 from models.employee import Employee
 from models.order import Order
 from helpers import (
@@ -14,7 +14,7 @@ from helpers import (
 )
 
 def welcome():
-    print("Welcome, now starting your system!")
+    print(cli_color_py.blue("Welcome, now starting your system!"))
 
 
 def main():
