@@ -21,7 +21,7 @@ class Order:
         if isinstance(title, str) and len(title)>0:
             self._title = title
         else:
-            raise ValueError(cli_color_py.red.bold("The order's title must be word(s) and cannot be empty!"))
+            raise ValueError(cli_color_py.red("The order's title must be word(s) and cannot be empty!"))
 
     @property
     def ordering_doctor(self):
@@ -32,7 +32,7 @@ class Order:
         if isinstance(ordering_doctor,str) and len(ordering_doctor)>0:
             self._ordering_doctor = ordering_doctor
         else:
-            raise ValueError(cli_color_py.red.bold("The ordering doctor's name has toe a be proper name and cannot be empty!"))
+            raise ValueError(cli_color_py.red("The ordering doctor's name has toe a be proper name and cannot be empty!"))
 
     @property
     def completed(self):
@@ -43,7 +43,7 @@ class Order:
         if isinstance(completed, int) and (completed == 1 or completed ==0):
             self._completed = completed
         else:
-            raise ValueError(cli_color_py.red.bold("Order's completed status must be either 0 or 1!"))
+            raise ValueError(cli_color_py.red("Order's completed status must be either 0 or 1!"))
 
     @property
     def employee_id(self):
@@ -54,7 +54,7 @@ class Order:
         if isinstance(employee_id,int):
             self._employee_id = employee_id
         else:
-            raise ValueError(cli_color_py.red.bold(
+            raise ValueError(cli_color_py.red(
                 "The employee entered isn't in the database. Please enter another employee to assign this order to."
             ))
 
