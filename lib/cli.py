@@ -86,7 +86,6 @@ def employees():
             return 
         elif int(choice) > 0 and int(choice)<=len(employees):
             employee_options(employees[int(choice)-1])
-            add_space()
         else:
             print("That isn't a valid choice. Please choose again!")   
 

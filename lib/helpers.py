@@ -209,6 +209,7 @@ def delete_employee(employee):
 
 def employee_options(employee):
     while True:
+        add_space()
         display_employee_info(employee)
         employee_options_menu(employee)
 
@@ -232,6 +233,7 @@ def employee_options(employee):
             print("That isn't a valid choice. Please choose again!")
 
 def employee_options_menu(employee):
+    add_space()
     print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
     print(f"Enter u to update {employee.first_name} {employee.last_name} information")
     print(f"Enter d to delete {employee.first_name} {employee.last_name}'s profile")
