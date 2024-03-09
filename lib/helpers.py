@@ -141,7 +141,7 @@ def change_assigned_employee(order):
 def reassign_orders(employee):
     orders = employee.orders()
     for order in orders:
-        order.ordering_doctor = None
+        order.ordering_doctor = "No current Doctor"
         order.update()
 
 def display_employee_info(employee):
