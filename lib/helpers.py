@@ -97,6 +97,7 @@ def manage_employee_orders(employee_orders, employee_id):
             return
         elif int(choice) > 0 and int(choice)<= len(employee_orders):
             order_options(employee_orders[int(choice)-1])
+            return
         else:
             print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
         
