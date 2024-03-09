@@ -121,7 +121,7 @@ class Order:
         """
 
         CURSOR.execute(sql,(self.id))
-        CONN.execute()
+        CONN.commit()
 
         del type(self).all[self.id]
 
