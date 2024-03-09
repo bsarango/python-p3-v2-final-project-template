@@ -116,11 +116,11 @@ class Order:
     
     def delete(self):
         sql = """
-            DELETE orders
+            DELETE FROM orders
             WHERE id = ?
         """
 
-        CURSOR.execute(sql,(self.id))
+        CURSOR.execute(sql,(self.id,))
         CONN.commit()
 
         del type(self).all[self.id]
