@@ -225,7 +225,7 @@ def update_employee(employee):
         
 def delete_employee(employee):
     add_space()
-    print("Are you sure you want to delete this employee? Enter 'y' for yes or 'n' for no")
+    print(cli_color_py.yellow("Are you sure you want to delete this employee? Enter 'y' for yes or 'n' for no"))
     choice = input(">")
     if choice == "y" or choice == "Y":
         reassign_orders(employee)
@@ -235,7 +235,7 @@ def delete_employee(employee):
     
     else:
         add_space()
-        print("There was an issue removing this employee!")
+        print(cli_color_py.red("There was an issue removing this employee!"))
         return
 
 def employee_options(employee):
