@@ -36,7 +36,7 @@ def create_order(_id):
 
     except Exception as exec:
         add_space()
-        print(cli_color_py.red("Failed to create an order. Try again."))p
+        print(cli_color_py.red("Failed to create an order. Try again."))
 
 def delete_order(order):
     add_space()
@@ -171,7 +171,7 @@ def create_employee():
             print(f"{employee.first_name} {employee.last_name} has been successfully added to the system!")
 
         except Exception as exec:
-            print("There was an error in entering the new employee's info into the system. Try again.", exec) 
+            print(cli_color_py.red("There was an error in entering the new employee's info into the system. Try again."), exec) 
     
     elif choice == "n" or choice == 'N':
         print("Returning to the previous menu")
