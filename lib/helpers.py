@@ -106,7 +106,10 @@ def display_order_info(order):
     print(f"Title: {order.title}")
     print(f"Ordering Doctor: {order.ordering_doctor}")
     assigned_employee = order.employee()
-    print(f"Assigned employee: {assigned_employee.first_name} {assigned_employee.last_name}")
+    if assigned_employee:
+        print(f"Assigned employee: {assigned_employee.first_name} {assigned_employee.last_name}")
+    else:
+        print("No current employee assigned to this order")
 
     if order.completed == 1:
         print(f"Completion Status: Completed")
