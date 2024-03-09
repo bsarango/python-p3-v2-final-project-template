@@ -66,7 +66,7 @@ def update_order(order):
 
     elif choice == "c":
         if order.completed == 1:
-            print("The order is already completed")
+            print(cli_color_py.yellow("The order is already completed"))
         else:
             order.completed = 1
             order.update()
