@@ -36,7 +36,7 @@ def create_order(_id):
 
     except Exception as exec:
         add_space()
-        print("Failed to create an order. Try again.")
+        print(cli_color_py.red("Failed to create an order. Try again."))
 
 def delete_order(order):
     add_space()
@@ -48,7 +48,7 @@ def delete_order(order):
         return
     
     else:
-        print("There was an issue removing this order!")
+        print(cli_color_py.red("There was an issue removing this order!"))
 
 def update_order(order):
     add_space()
