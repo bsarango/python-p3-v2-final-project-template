@@ -283,6 +283,7 @@ def order_options(order):
             update_order(order)
         elif choice == "d" or choice == "D":
             delete_order(order)
+            return
         elif choice == "b" or choice == "B":
             "Returning to the Previous Menu"
             return
