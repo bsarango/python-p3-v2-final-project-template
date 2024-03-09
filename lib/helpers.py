@@ -36,7 +36,7 @@ def create_order(_id):
 
     except Exception as exec:
         add_space()
-        print(cli_color_py.red("Failed to create an order. Try again."))
+        print(cli_color_py.red("Failed to create an order. Try again."))p
 
 def delete_order(order):
     add_space()
@@ -110,7 +110,7 @@ def display_order_info(order):
     if assigned_employee:
         print(f"Assigned employee: {assigned_employee.first_name} {assigned_employee.last_name}")
     else:
-        print("No current employee assigned to this order")
+        print(cli_color_py.yellow("No current employee assigned to this order"))
 
     if order.completed == 1:
         print(f"Completion Status: Completed")
