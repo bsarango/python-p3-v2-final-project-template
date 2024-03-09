@@ -44,7 +44,7 @@ def delete_order(order):
     choice = input(">")
     if choice == "y" or choice == "Y":
         order.delete()
-        print(cli_color_py.green(f"The {employee.first_name} order has been removed."))
+        print(cli_color_py.green("The order has been removed."))
         return
     
     else:
