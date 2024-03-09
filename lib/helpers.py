@@ -214,7 +214,7 @@ def update_employee(employee):
             print(f"{employee.first_name} {employee.last_name} has been updated successfully!")
 
         except Exception as exec:
-            print(f"There was an error updating {employee.first_name} {employee.last}'s profile.", exec)
+            print(cli_color_py.red(f"There was an error updating {employee.first_name} {employee.last}'s profile."), exec)
     
     elif choice == 'n' or choice == 'N':
         print("Returning to the previous menu")
