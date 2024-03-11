@@ -1,110 +1,60 @@
-# Phase 3 CLI+ORM Project 
+# Phase 3 Hospital Order Management System Program 
 
-## Learning Goals
+## Project Description
 
-- Discuss the basic directory structure of a CLI.
-- Outline the first steps in building a CLI.
+This program is a simple hospital management system intended for a nursing or shift manager or supervisor to insert employee and order data as well as retrieve existing or previously added data. The program accepts inputs and shows data via a CLI. It manipulates and holds data that is inserted or retrieved via models for employees and orders in python. All the data that is stored or retreived is done in a database for the hospital. 
 
----
+## Project Installation and Setup
 
-## Introduction
+To access the repository for this project, click the following link.
 
-This program is a simple CLI program that takes user inputs to create Employee and Orders with attributes to save into a hospital database. There are options in the user interface to access the data from the 
+https://github.com/bsarango/python-p3-v2-final-project-template
 
-## Generating Your Environment
+To fork the Repo to your system, click on the green Code button and click on the double boxed icon next to the provided link. 
 
-You might have noticed in the file structure- there's already a Pipfile!
+Once copied, open your terminal and enter the directory you want to clone the Repo into. Enter the following to clone the Repo
 
-Install any additional dependencies you know you'll need for your project by
-adding them to the `Pipfile`. Then run the commands:
+```console
+git clone https://github.com/bsarango/python-p3-v2-final-project-template
+```
+
+Once cloned, enter the cloned directory. Inside the newly cloned directory, enter the following to install all the files from pipfile and set up the pipenv.
 
 ```console
 pipenv install
+```
+
+Enter the following to create the virtual environment to run the program
+
+```console
 pipenv shell
 ```
 
----
+Once the virtual environement is successfully set up, enter the following to start the program.
 
-## Generating Your CLI
-
-A CLI is, simply put, an interactive script and prompts the user and performs
-operations based on user input.
-
-The project template has a sample CLI in `lib/cli.py` that looks like this:
-
-```py
-# lib/cli.py
-
-from helpers import (
-    exit_program,
-    helper_1
-)
-
-
-def main():
-    while True:
-        menu()
-        choice = input("> ")
-        if choice == "0":
-            exit_program()
-        elif choice == "1":
-            helper_1()
-        else:
-            print("Invalid choice")
-
-
-def menu():
-    print("Please select an option:")
-    print("0. Exit the program")
-    print("1. Some useful function")
-
-
-if __name__ == "__main__":
-    main()
+```
+python lib/cli.py
 ```
 
-The helper functions are located in `lib/helpers.py`:
+Upon entering this in the console, the program will start with a greeting to the user and give a menu with options to select from for an input
 
-```py
-# lib/helpers.py
-
-def helper_1():
-    print("Performing useful function#1.")
-
-
-def exit_program():
-    print("Goodbye!")
-    exit()
-```
-
-You can run the template CLI with `python lib/cli.py`, or include the shebang
-and make it executable with `chmod +x`. The template CLI will ask for input, do
-some work, and accomplish some sort of task.
-
-Past that, CLIs can be whatever you'd like, as long as you follow the project
-requirements.
-
-Of course, you will update `lib/cli.py` with prompts that are appropriate for
-your application, and you will update `lib/helpers.py` to replace `helper_1()`
-with a useful function based on the specific problem domain you decide to
-implement, along with adding other helper functions to the module.
-
-In the `lib/models` folder, you should rename `model_1.py` with the name of a
-data model class from your specific problem domain, and add other classes to the
-folder as needed. The file `lib/models/__init__.py` has been initialized to
-create the necessary database constants. You need to add import statements to
-the various data model classes in order to use the database constants.
-
-You are also welcome to implement a different module and directory structure.
-However, your project should be well organized, modular, and follow the design
-principal of separation of concerns, which means you should separate code
-related to:
-
-- User interface
-- Data persistence
-- Problem domain rules and logic
 
 ---
+
+## Program Contents
+The program contains several files the CLI, setting up the database, helper functions that are called in the CLI file, and models for employee and order objects.
+
+The cli.py file has the if __name__ == "__main__": block that starts the program and initiates the call to the functions in that block. The first call is to a greeting function to give a welcome to the user. Its followed by calling main() that displays the first menu and options by calling the menu(). Once one of the options is selected, it will proceed to call either the employees() and employees_menu() or orders() and orders_menu() and display all of employees or orders and options for viewing or managing them. Selection of the options calls functions from the helpers file to carry out further actions. There is also the option to go back to the previous menu or exit the program completely. The choice to exit provides teh user a message before exiting out of the program and returning the user to the console.
+
+The cli.py file imports the employee, order, several helper functions, and cli_color_py. Employee and order are models used in the functions and helpers and cli_color_py is a module used to display colored text - it used to display success, warning, errors or failures, and startup/exit messages.
+
+The helpers.py file imports the employee and order models to use these respective objects in the files functions and the cli_color_py module to give color to success, warning, error, or startup/exit messages to the user. Helpers.py contains several helper functions that are called in cli.py functions or within other helper functions. 
+
+In helpers.py, list_employees() and list_orders() display all of the employee or order instances, by title or name only, via enumeration from the passed argument. The create_order() recieved user input for the data needed to create an order object. The object's data is verified via try and execpt statements when using the class method .create for Order
+
+
+
+
 
 ## Updating README.md
 
