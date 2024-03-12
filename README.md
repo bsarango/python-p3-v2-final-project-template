@@ -50,8 +50,7 @@ The cli.py file imports the employee, order, several helper functions, and cli_c
 
 The helpers.py file imports the employee and order models to use these respective objects in the files functions and the cli_color_py module to give color to success, warning, error, or startup/exit messages to the user. Helpers.py contains several helper functions that are called in cli.py functions or within other helper functions. 
 
-In helpers.py, list_employees() and list_orders() display all of the employee or order instances, by title or name only, via enumeration from the passed argument. The create_order() recieved user input for the data needed to create an order object. The object's data is verified via try and execpt statements when using the class method .create for Order
-
+In helpers.py, list_employees() and list_orders() display all of the employee or order instances, by title or name only, via enumeration from the passed argument. The create_order() takes in user inputs and the passed argument to assign to variables for an order object's attributes. The order object is then created and verified using the .create(). The delete_order() takes an existing order as an arugment and validates the users response to proceed with deleting or not. The update_order() takes an order object as an argument and requests user inputs to reassign the selected objects' attributes. The object is updated in the database via the .update() instance function for each changed attribute. The manage_employee_orders() prints a menu for the user to select from to perform an action. The user can create an order for the employee, return to the previous menu, or select an order by number to get further options for that order by calling order_options().
 
 
 
@@ -69,20 +68,6 @@ cheat sheet in this assignments's resources for a basic guide to Markdown.
 
 ### What Goes into a README?
 
-This README serves as a template. Replace the contents of this file to describe
-the important files in your project and describe what they do. Each Python file
-that you edit should get at least a paragraph, and each function should be
-described with a sentence or two.
-
-Describe your actual CLI script first, and with a good level of detail. The rest
-should be ordered by importance to the user. (Probably functions next, then
-models.)
-
-Screenshots and links to resources that you used throughout are also useful to
-users and collaborators, but a little more syntactically complicated. Only add
-these in if you're feeling comfortable with Markdown.
-
----
 
 ## Conclusion
 

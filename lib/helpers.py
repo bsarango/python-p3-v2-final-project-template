@@ -9,6 +9,8 @@ def list_employees(employees):
         print(count,": ",ele.first_name, " ",ele.last_name)
     
 def list_orders(orders):
+    orders = Order.get_all()
+    print("All current orders: ")
     add_space()
     if len(orders)>0:
         for count, ele in enumerate(orders, start=1):
@@ -79,7 +81,7 @@ def update_order(order):
         print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
     
 
-def manage_employee_orders(employee_orders, employee_id):
+def manage_employee_orders(employee):
     while True:
         add_space()
         print("Do you wish to add or manage an order?")
@@ -90,13 +92,13 @@ def manage_employee_orders(employee_orders, employee_id):
         choice = input(">")
 
         if choice == "a" or choice =="A":
-            create_order(employee_id)
+            create_order(employee.id)
             return
         elif choice == "b" or choice == "B":
             print("Returning to the previous menu")
             return
-        elif int(choice) > 0 and int(choice)<= len(employee_orders):
-            order_options(employee_orders[int(choice)-1])
+        elif int(choice) > 0 and int(choice)<= len(employee.orders()):
+            order_options(employee.orders()[int(choice)-1])
             return
         else:
             print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
@@ -249,7 +251,7 @@ def employee_options(employee):
             space_and_border()
             current_employee_orders = employee.orders()
             list_orders(current_employee_orders)
-            manage_employee_orders(current_employee_orders,employee.id)
+            manage_employee_orders(employee)
 
         elif choice == "u" or choice == "U":
             update_employee(employee)
