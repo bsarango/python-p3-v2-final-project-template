@@ -50,7 +50,6 @@ def orders():
     space_and_border()
     while True:
         orders = Order.get_all()
-        print("All current orders: ")
         list_orders(orders)
         orders_menu()
 
