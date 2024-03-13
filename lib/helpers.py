@@ -91,17 +91,20 @@ def manage_employee_orders(employee):
 
         choice = input(">")
 
-        if choice == "a" or choice =="A":
-            create_order(employee.id)
-            return
-        elif choice == "b" or choice == "B":
-            print("Returning to the previous menu")
-            return
-        elif int(choice) > 0 and int(choice)<= len(employee.orders()):
-            order_options(employee.orders()[int(choice)-1])
-            return
-        else:
-            print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
+        try:
+            if choice == "a" or choice =="A":
+                create_order(employee.id)
+                return
+            elif choice == "b" or choice == "B":
+                print("Returning to the previous menu")
+                return
+            elif int(choice) > 0 and int(choice)<= len(employee.orders()):
+                order_options(employee.orders()[int(choice)-1])
+                return
+            else:
+                print(cli_color_py.yellow("This isn't a valid choice for an order, please try again!"))
+        except Exception as exec:
+            print(cli_color_py.yellow("This isn't a valid choice. Please try again!"))
         
 def display_order_info(order):
     add_space()
