@@ -9,7 +9,6 @@ def list_employees(employees):
         print(count,": ",ele.first_name, " ",ele.last_name)
     
 def list_orders(orders):
-    orders = Order.get_all()
     print("All current orders: ")
     add_space()
     if len(orders)>0:
