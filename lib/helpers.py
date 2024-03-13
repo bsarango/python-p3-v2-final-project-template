@@ -132,17 +132,20 @@ def change_assigned_employee(order):
 
         choice = input(">")
 
-        if int(choice) > 0 and int(choice) <= len(employees):
-            new_employee = employees[int(choice)-1]
-            order.employee_id = new_employee.id
-            order.update()
-            print(cli_color_py.green("A new employee has been assigned to this order"))
-            return
-        elif choice == "b":
-            print("Returning to the previous menu")
-            return
-        else:
-            print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
+        try:
+            if int(choice) > 0 and int(choice) <= len(employees):
+                new_employee = employees[int(choice)-1]
+                order.employee_id = new_employee.id
+                order.update()
+                print(cli_color_py.green("A new employee has been assigned to this order"))
+                return
+            elif choice == "b":
+                print("Returning to the previous menu")
+                return
+            else:
+                print(cli_color_py.yellow("This isn't a valid choice for an employee, please try again!"))
+        except Exceptions as exec:
+            print("This isn't a valid choice, please choose again!")
 
 def reassign_orders(employee):
     orders = employee.orders()
