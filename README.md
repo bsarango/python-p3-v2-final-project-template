@@ -39,46 +39,20 @@ python lib/cli.py
 Upon entering this in the console, the program will start with a greeting to the user and give a menu with options to select from for an input
 
 
----
-
 ## Program Contents
-The program contains several files the CLI, setting up the database, helper functions that are called in the CLI file, and models for employee and order objects.
+The program contains several files for the CLI, __init__.py to set up the database and create a connection to the code, a file for helper functions that are called in the CLI file, and models for employee and order classes.
 
-The cli.py file has the if __name__ == "__main__": block that starts the program and initiates the call to the functions in that block. The first call is to a greeting function to give a welcome to the user. Its followed by calling main() that displays the first menu and options by calling the menu(). Once one of the options is selected, it will proceed to call either the employees() and employees_menu() or orders() and orders_menu() and display all of employees or orders and options for viewing or managing them. Selection of the options calls functions from the helpers file to carry out further actions. There is also the option to go back to the previous menu or exit the program completely. The choice to exit provides teh user a message before exiting out of the program and returning the user to the console.
-
-The cli.py file imports the employee, order, several helper functions, and cli_color_py. Employee and order are models used in the functions and helpers and cli_color_py is a module used to display colored text - it used to display success, warning, errors or failures, and startup/exit messages.
+The cli.py file is where the main logic and interaction with the user occurs. The user is given menu options to select from when then calls other functions to perform those tasks. The file imports the employee, order, several helper functions, and cli_color_py. Employee and order are models used in the functions and helpers and cli_color_py is a module used to display colored text - it used to display success, warning, errors or failures, and startup/exit messages.
 
 The helpers.py file imports the employee and order models to use these respective objects in the files functions and the cli_color_py module to give color to success, warning, error, or startup/exit messages to the user. Helpers.py contains several helper functions that are called in cli.py functions or within other helper functions. 
 
-In helpers.py, list_employees() and list_orders() display all of the employee or order instances, by title or name only, via enumeration from the passed argument. The create_order() takes in user inputs and the passed argument to assign to variables for an order object's attributes. The order object is then created and verified using the .create(). The delete_order() takes an existing order as an arugment and validates the users response to proceed with deleting or not. The update_order() takes an order object as an argument and requests user inputs to reassign the selected objects' attributes. The object is updated in the database via the .update() instance function for each changed attribute. The manage_employee_orders() prints a menu for the user to select from to perform an action. The user can create an order for the employee, return to the previous menu, or select an order by number to get further options for that order by calling order_options().
+The models folder contains the models for employee, orders, and the connection to the database.
+
+The __init__.py file creates and establishes the connection to the hospital.db database where data is store tables for employees and orders created in the program.
+
+The employee.py model contains the code for the Employee class as well as attributes and methods for creating, updating, deleting, saving, and retrieving data to and from the database as well as the __init__ for instantiating instances of the class.
+
+The order.py model contains the code for the Order class as well as attributes and methods for creating, updating, deleting, saving, and retrieving data to and from the database as well as the __init__ for instantiating instances of the class.
 
 
 
-
-## Updating README.md
-
-`README.md` is a Markdown file that should describe your project. You will
-replace the contents of this `README.md` file with a description of **your**
-actual project.
-
-Markdown is not a language that we cover in Flatiron's Software Engineering
-curriculum, but it's not a particularly difficult language to learn (if you've
-ever left a comment on Reddit, you might already know the basics). Refer to the
-cheat sheet in this assignments's resources for a basic guide to Markdown.
-
-### What Goes into a README?
-
-
-## Conclusion
-
-A lot of work goes into a good CLI, but it all relies on concepts that you've
-practiced quite a bit by now. Hopefully this template and guide will get you off
-to a good start with your Phase 3 Project.
-
-Happy coding!
-
----
-
-## Resources
-
-- [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)

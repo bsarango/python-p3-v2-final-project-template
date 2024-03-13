@@ -8,7 +8,6 @@ from helpers import (
     list_employees,
     list_orders,
     create_employee,
-    employee_options,
     order_options,
     add_space
 )
@@ -96,6 +95,40 @@ def employees_menu():
     print("Enter an Employee by their respective number:")
     print("Enter e to enter an employee to the system:")
     print("Enter b to return to the main menu:")
+
+def employee_options(employee):
+    while True:
+        add_space()
+        display_employee_info(employee)
+        employee_options_menu(employee)
+
+        choice = input(">")
+        if choice == "o" or choice == "O":
+            space_and_border()
+            current_employee_orders = employee.orders()
+            list_orders(current_employee_orders)
+            manage_employee_orders(employee)
+
+        elif choice == "u" or choice == "U":
+            update_employee(employee)
+        elif choice == "d" or choice == "D":
+            delete_employee(employee)
+            return
+        elif choice == "b" or choice == "B":
+            print("Returning to the Previous Menu")
+            return
+        elif choice == "0":
+            exit_program()
+        else:
+            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
+
+def employee_options_menu(employee):
+    add_space()
+    print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
+    print(f"Enter u to update {employee.first_name} {employee.last_name} information")
+    print(f"Enter d to delete {employee.first_name} {employee.last_name}'s profile")
+    print("Enter b to go back to the previous menu")
+    print("Enter 0 to exit the program")
 
 if __name__ == "__main__":
     welcome()
