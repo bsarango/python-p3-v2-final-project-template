@@ -60,12 +60,44 @@ def orders():
         else:
             print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
 
+
 def orders_menu():
     add_space()
     print("Select one of the following options:")
     print("Enter the number for the respective order")
     print("Enter b to go back")
     print("Enter 0 to exit the program")      
+
+
+def order_options(order):
+    while True:
+        add_space()
+        display_order_info(order)
+        order_options_menu()
+
+        choice = input(">")
+
+        if choice == "u" or choice == "U":
+            update_order(order)
+        elif choice == "d" or choice == "D":
+            delete_order(order)
+            return
+        elif choice == "b" or choice == "B":
+            "Returning to the Previous Menu"
+            return
+        elif choice == "0":
+            exit_program()
+        else:
+            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
+
+
+def order_options_menu():
+    add_space()
+    print("Enter u to update this order")
+    print("Enter d to delete this order")
+    print("Enter b to go back to the previous menu")
+    print("Enter 0 to exit the program")
+
 
 def employees():
     space_and_border()
@@ -89,12 +121,14 @@ def employees():
         else:
             print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))   
 
+
 def employees_menu():
     add_space()
     print("Select one of the following:")
     print("Enter an Employee by their respective number:")
     print("Enter e to enter an employee to the system:")
     print("Enter b to return to the main menu:")
+
 
 def employee_options(employee):
     while True:
@@ -122,6 +156,7 @@ def employee_options(employee):
         else:
             print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
 
+
 def employee_options_menu(employee):
     add_space()
     print(f"Enter o to view all the orders for {employee.first_name} {employee.last_name}")
@@ -129,6 +164,7 @@ def employee_options_menu(employee):
     print(f"Enter d to delete {employee.first_name} {employee.last_name}'s profile")
     print("Enter b to go back to the previous menu")
     print("Enter 0 to exit the program")
+
 
 if __name__ == "__main__":
     welcome()
