@@ -114,18 +114,21 @@ def employees():
         employees_menu()
         choice = input("> ")
 
-        if choice == "0":
-            exit_program()
-        elif choice == "e" or choice == 'E':
-            create_employee()
-            add_space()
-        elif choice == "b" or choice == "B":
-            print("Returning to the Main Menu")
-            return 
-        elif int(choice) > 0 and int(choice)<=len(employees):
-            employee_options(employees[int(choice)-1])
-        else:
-            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))   
+        try:
+            if choice == "0":
+                exit_program()
+            elif choice == "e" or choice == 'E':
+                create_employee()
+                add_space()
+            elif choice == "b" or choice == "B":
+                print("Returning to the Main Menu")
+                return 
+            elif int(choice) > 0 and int(choice)<=len(employees):
+                employee_options(employees[int(choice)-1])
+            else:
+                print(cli_color_py.yellow("That isn't a valid choice for an employee. Please choose again!"))   
+        except Exception as exc:
+            print(cli_color_py.yellow("That isnt a valid choice! Please choose again"))
 
 
 def employees_menu():
