@@ -8,7 +8,14 @@ from helpers import (
     list_employees,
     list_orders,
     create_employee,
-    order_options,
+    display_order_info,
+    update_order,
+    delete_order,
+    display_employee_info,
+    current_employee_orders,
+    manage_employee_orders,
+    update_employee,
+    delete_employee,
     add_space
 )
 

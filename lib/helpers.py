@@ -240,34 +240,6 @@ def delete_employee(employee):
         print(cli_color_py.red("There was an issue removing this employee!"))
         return
 
-def order_options(order):
-    while True:
-        add_space()
-        display_order_info(order)
-        order_options_menu()
-
-        choice = input(">")
-
-        if choice == "u" or choice == "U":
-            update_order(order)
-        elif choice == "d" or choice == "D":
-            delete_order(order)
-            return
-        elif choice == "b" or choice == "B":
-            "Returning to the Previous Menu"
-            return
-        elif choice == "0":
-            exit_program()
-        else:
-            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
-
-def order_options_menu():
-    add_space()
-    print("Enter u to update this order")
-    print("Enter d to delete this order")
-    print("Enter b to go back to the previous menu")
-    print("Enter 0 to exit the program")
-
 def space_and_border():
     print("")
     print('/'* 20)
