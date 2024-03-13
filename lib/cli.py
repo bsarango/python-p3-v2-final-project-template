@@ -193,10 +193,10 @@ def manage_employee_orders(employee):
                 create_order(employee.id)
             elif choice == "b" or choice == "B":
                 print("Returning to the previous menu")
-                stay = false
+                return
             elif int(choice) > 0 and int(choice)<= len(employee.orders()):
                 order_options(employee.orders()[int(choice)-1])
-                stay = false
+                return
             else:
                 print(cli_color_py.yellow("This isn't a valid choice for an order, please try again!"))
         except Exception as exec:
