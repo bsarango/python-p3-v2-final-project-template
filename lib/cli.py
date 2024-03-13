@@ -177,6 +177,31 @@ def employee_options_menu(employee):
     print("Enter b to go back to the previous menu")
     print("Enter 0 to exit the program")
 
+def manage_employee_orders(employee):
+    stay = True
+    while stay:
+        add_space()
+        print("Do you wish to add or manage an order?")
+        print("Enter a to add an order")
+        print("Enter the number of the order to manage the order")
+        print("Enter b to go back to the previous menu")
+
+        choice = input(">")
+
+        try:
+            if choice == "a" or choice =="A":
+                create_order(employee.id)
+            elif choice == "b" or choice == "B":
+                print("Returning to the previous menu")
+                stay = false
+            elif int(choice) > 0 and int(choice)<= len(employee.orders()):
+                order_options(employee.orders()[int(choice)-1])
+                stay = false
+            else:
+                print(cli_color_py.yellow("This isn't a valid choice for an order, please try again!"))
+        except Exception as exec:
+            print(cli_color_py.yellow("This isn't a valid choice. Please try again!"))
+
 
 if __name__ == "__main__":
     welcome()

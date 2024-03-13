@@ -80,31 +80,6 @@ def update_order(order):
     else:
         print(cli_color_py.yellow("This isn't a valid choice, please try again!"))
     
-
-def manage_employee_orders(employee):
-    while True:
-        add_space()
-        print("Do you wish to add or manage an order?")
-        print("Enter a to add an order")
-        print("Enter the number of the order to manage the order")
-        print("Enter b to go back to the previous menu")
-
-        choice = input(">")
-
-        try:
-            if choice == "a" or choice =="A":
-                create_order(employee.id)
-                return
-            elif choice == "b" or choice == "B":
-                print("Returning to the previous menu")
-                return
-            elif int(choice) > 0 and int(choice)<= len(employee.orders()):
-                order_options(employee.orders()[int(choice)-1])
-                return
-            else:
-                print(cli_color_py.yellow("This isn't a valid choice for an order, please try again!"))
-        except Exception as exec:
-            print(cli_color_py.yellow("This isn't a valid choice. Please try again!"))
         
 def display_order_info(order):
     add_space()
