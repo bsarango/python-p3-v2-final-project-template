@@ -56,15 +56,18 @@ def orders():
 
         choice = input("> ")
 
-        if choice == "0":
-            exit_program()
-        elif choice == "b" or choice == "B":
-            print("Returning to the Main Menu")
-            return 
-        elif int(choice) > 0 and int(choice)<=len(orders):
-            order_options(orders[int(choice)-1])
-        else:
-            print(cli_color_py.yellow("That isn't a valid choice. Please choose again!"))
+        try:
+            if choice == "0":
+                exit_program()
+            elif choice == "b" or choice == "B":
+                print("Returning to the Main Menu")
+                return 
+            elif int(choice) > 0 and int(choice)<=len(orders):
+                order_options(orders[int(choice)-1])
+            else:
+                print(cli_color_py.yellow("That isn't a valid choice for an order. Please choose again!"))
+        except Exception as exec: 
+            print(cli_color_py.yellow("That isn't a valid choice. Please try again!"))
 
 
 def orders_menu():
